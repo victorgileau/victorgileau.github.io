@@ -1,0 +1,131 @@
+
+@font-face {
+    font-family: "Delivery";
+    src: url("./font/wrong_delivery/Wrong\ Delivery.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    max-width: 100vw;
+    height: 90vh;
+}
+
+#jeu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 600px;
+    max-width: 900px;
+    min-width: 200px;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #6e0000;
+    overflow: hidden;
+    color: #e0baba;
+}
+
+#logo {
+    order: 0;
+    font-family: "Delivery";
+    text-transform: uppercase;
+    font-size: 45px;
+    text-align: center;
+}
+
+#titre {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.image {
+    order: 2;
+    border-radius: 10%;
+    min-width: 200px;
+    max-width: 400px;
+    height: 350px;
+}
+
+.bouton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    order: 2;
+}
+
+button {
+    border-radius: 25px;
+    min-width: 25%;
+    flex-grow: 0;
+    max-height: 50px;
+    min-height: 35px;
+    flex-basis: 20%;
+    background-color: #bf0606;
+    color: #e0baba;
+    box-shadow: 5px 5px 10px #000000;
+    border: 1px solid #000000;
+}
+
+button#btUn {
+    align-self: flex-start;
+}
+
+button#btDeux {
+    align-self: center;
+}
+
+button#btTrois {
+    align-self: flex-end;
+}
+
+button:hover {
+    background-color: #cf3232; /*Changement*/
+    color: #ffabab;
+    box-shadow: 0px 0px 10px #000000;
+}
+
+button:focus {
+    box-shadow: 0px 0px 10px #000000;
+    border: 1px solid #e0baba;
+}
+
+button:active {
+    box-shadow: inset 0px 0px 10px #000000;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #000000;
+        max-width: 100vw;
+        min-height: 90vh;
+    }
+    #jeu {
+        min-height: 600px;
+        max-height: 1920px;
+        max-width: 300px;
+        min-width: 200px;
+    }
+    .bouton {
+        display: block;
+        width: 100%;
+        order: 2;
+    }
+    button {
+        min-width: 50%;
+        margin: 5%;
+    }
+}
