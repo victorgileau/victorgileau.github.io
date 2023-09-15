@@ -119,13 +119,14 @@ button:active {
         max-width: 300px;
         min-width: 200px;
     }
-    .bouton {
-        display: block;
-        width: 100%;
+    .image {
         order: 2;
+        border-radius: 10%;
+        min-width: 50px;
+        max-width: 200px;
+        max-height: 250px;
     }
     button {
-        min-width: 50%;
-        margin: 5%;
+        margin: 5px;
     }
 }
