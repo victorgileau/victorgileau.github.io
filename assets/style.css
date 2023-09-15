@@ -16,7 +16,7 @@ body {
     justify-content: center;
     background-color: #000000;
     max-width: 100vw;
-    height: 90vh;
+    min-height: 90vh;
 }
 
 #jeu {
@@ -36,10 +36,8 @@ body {
 
 #logo {
     order: 0;
-    font-family: "Delivery";
-    text-transform: uppercase;
     font-size: 45px;
-    text-align: center;
+    max-width: 80vw;
 }
 
 #titre {
@@ -128,5 +126,9 @@ button:active {
     }
     button {
         margin: 5px;
+    }
+    #logo {
+        max-width: 50vw;
+        min-width: 45vw;
     }
 }
