@@ -6,8 +6,10 @@ Dévelopement Web - Projet Vous êtes le heros
 
 **Inspiration** : Save private ryan, art de Massiveface sur instagram
 
-Palette de couleur :
+**Palette de couleur :**
+
+![Les couleurs du site, sans les survoles.](assets/images/palette-couleur-v1.png)
 
 # Gileau-Victor_Vous-etes-le-heros_Escadron-des-morts
 
-![image logo](assets/images/schema.png)
+![image du schéma de l'histoire](assets/images/schema.png)
