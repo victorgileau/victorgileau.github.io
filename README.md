@@ -10,6 +10,6 @@
 
 ![Les couleurs du site, sans les survoles.](assets/images/palette-couleur-v1.png)
 
-# Gileau-Victor_Vous-etes-le-heros_Escadron-des-morts
+### Schéma - Histoire de L'Escardon des morts
 
 ![image du schéma de l'histoire](assets/images/schema.png)
