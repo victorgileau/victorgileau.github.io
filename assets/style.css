@@ -110,7 +110,7 @@ button:active {
         justify-content: center;
         background-color: #000000;
         max-width: 100vw;
-        min-height: 90vh;
+        min-height: 100vh;
     }
     #jeu {
         min-height: 100px;
