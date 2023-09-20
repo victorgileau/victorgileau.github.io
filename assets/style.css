@@ -24,9 +24,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    min-height: 600px;
+    min-height: 100px;
     max-width: 900px;
-    min-width: 200px;
+    min-width: 400px;
     padding: 25px;
     border-radius: 25px;
     background-color: #6e0000;
@@ -113,9 +113,8 @@ button:active {
         min-height: 90vh;
     }
     #jeu {
-        min-height: 600px;
-        max-height: 1920px;
-        max-width: 300px;
+        min-height: 100px;
+        max-width: 400px;
         min-width: 200px;
     }
     .image {
@@ -130,6 +129,6 @@ button:active {
     }
     #logo {
         max-width: 50vw;
-        min-width: 230px;
+        min-width: 350px;
     }
 }
