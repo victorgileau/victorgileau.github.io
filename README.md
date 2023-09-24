@@ -12,4 +12,4 @@
 
 ### Schéma - Histoire de L'Escardon des morts
 
-![image du schéma de l'histoire](assets/images/schema.png)
+![image du schéma de l'histoire](assets/images/schema_v3.png)
