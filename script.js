@@ -172,10 +172,16 @@ const chapters = {
 }
 
 function goToChapter(chapter) {
-    console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
-    for (let i in chapters[chapter].bouton) {
-        console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
+    if (chapters[chapter] !== undefined) {
+        console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
+        for (let i in chapters[chapter].bouton) {
+            console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
+        }
     }
+    else {
+        console.log('Mauvaise clé.');
+    }
+    
 }
 
 goToChapter('intro');
