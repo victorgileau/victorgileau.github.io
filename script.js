@@ -14,8 +14,8 @@ const chapters = {
         image: './assets/images/image_histoire/image_transformer/commandant_militaire_homme-modifier.jpg',
         bouton: [
             { titre: 'Fuir', 'destination': 'fuirChoixDepart' },
-            { titre: 'Accepter', 'destination': 'RefuserChoixDepart' },
-            { titre: 'Refuser', 'destination': 'AccepterChoixDepart' }
+            { titre: 'Accepter', 'destination': 'refuserChoixDepart' },
+            { titre: 'Refuser', 'destination': 'accepterChoixDepart' }
         ]
     },
 
@@ -24,20 +24,20 @@ const chapters = {
         description: '\nVous êtes tuer par l\'ennemi. Pour avoir fais une desision aussi stupide.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_tire-modifier.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'ChoixDepart' }
+            { titre: 'Recommancer', 'destination': 'intro' }
         ]
     },
 
-    RefuserChoixDepart: {
+    refuserChoixDepart: {
         titre: 'Exécuté',
         description: '\nVous avez été exécuté pour avoir désobéi un ordre direct. C\'était une certitude.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_tire-modifier.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'ChoixDepart' }
+            { titre: 'Recommancer', 'destination': 'intro' }
         ]
     },
 
-    AccepterChoixDepart: {
+    accepterChoixDepart: {
         titre: 'Début vers la mission',
         description: '\nVous avez été envoyé sur le champ de bataille sous la protection d\'autres soldats. L\'objectif se trouve à cinq kilomètres plus loin.',
         image: './assets/images/image_histoire/image_transformer/groupe_militaire_arme-modifier.jpg',
@@ -62,7 +62,7 @@ const chapters = {
         description: '\nVous êtes tuer par l\'ennemi, conseille d\'ami ne pas foncer tout droit dans un champ de bataille.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_tire-modifier.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'ChoixDepart' }
+            { titre: 'Recommancer', 'destination': 'intro' }
         ]
     },
 
@@ -71,7 +71,7 @@ const chapters = {
         description: '\nVous perdez Bombe ayant reçu une balle perdue dans les tranches. Mais le reste de l\'escadron survie. Vous continuer sur votre lancer.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_debout_redard-vers-camera-modifier.jpg',
         bouton: [
-            { titre: 'Continuer', 'destination': 'FinNiveauUn' }
+            { titre: 'Continuer', 'destination': 'finNiveauUn' }
         ]
     },
 
@@ -80,11 +80,11 @@ const chapters = {
         description: '\nLe véhicule est une bonne défense. Tous les membres de l\'escadron survivent. Mais le véhicule ne fonctionne plus.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_debout_redard-vers-camera-modifier.jpg',
         bouton: [
-            { titre: 'Continuer', 'destination': 'FinNiveauUn' }
+            { titre: 'Continuer', 'destination': 'finNiveauUn' }
         ]
     },
 
-    FinNiveauUn: {
+    finNiveauUn: {
         titre: 'Status sur la situation.',
         description: '\nVous êtes à 3 km de l\'objectif.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_de_dos-modifer.jpg',
@@ -109,7 +109,7 @@ const chapters = {
         description: '\nBombe entand vos ordre a travers les tire ennemi et courre sur le champ de bataille et puis... \n Bombe posse le pied sur une mine et dit \"merde\". Il meurt.',
         image: './assets/images/image_histoire/image_transformer/militaire_vissage_cacher_regard-de_cote-modifier.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'ChoixDepart' }
+            { titre: 'Recommancer', 'destination': 'intro' }
         ]
     },
 
@@ -118,7 +118,7 @@ const chapters = {
         description: '\nVous proposer a vos coéquiper en crian : On pourrait sacrifier Nick!!! \nMais la reaction est très négative de la part de votre équipe vous êtes tuer pour vouloir tuer le farceur Nick.',
         image: './assets/images/image_histoire/image_transformer/deux_militaire-modifer.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'ChoixDepart' }
+            { titre: 'Recommancer', 'destination': 'intro' }
         ]
     },
 
@@ -147,7 +147,7 @@ const chapters = {
         description: '\nVous voyez tout la difficulter de la situation dans la quelle votre escadron ce trouve. Il menque de munition et le moral est bas.\nVous foncer vers l\'ennemi pour destabliser l\'ennemi et réalumer la flame de vos confrères. \n\n\nMais maleureusement vou mourrez d\'un tire a la tête en un instant.',
         image: './assets/images/image_histoire/image_transformer/homme_masque_ordre-modifier.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'ChoixDepart' }
+            { titre: 'Recommancer', 'destination': 'intro' }
         ]
     },
 
@@ -156,7 +156,7 @@ const chapters = {
         description: '\nNick crie qui va les sauver : Je vais tout vous sauver!!! \nNick enlève la goupille d\'une grenade, mais une blessure à son bras fait en sorte qu\'il l\'échappe, ce qui tue tout votre escadron. \nIl ne vous a pas sauver du tout.',
         image: './assets/images/image_histoire/image_transformer/explosion_carre-modifier.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'ChoixDepart' }
+            { titre: 'Recommancer', 'destination': 'intro' }
         ]
     },
 
@@ -165,7 +165,7 @@ const chapters = {
         description: '\nBombe dit avec un ton certait : Je vais vous auver les gars. \nBombe fait le kamikaze et élimine l\'ennemi ce qui crée la zone sécurisée. \n\nL\'objectif est sauvé. Vous avez maintenant une chance de gagner la guerre avec l\'aide de l\'immortel. \n\n FIN',
         image: './assets/images/image_histoire/image_transformer/hommex2_militaire_fummee-modifer.jpg',
         bouton: [
-            { titre: 'Succès - Recommancer', 'destination': 'ChoixDepart' }
+            { titre: 'Succès - Recommancer', 'destination': 'intro' }
         ]
     },
     
