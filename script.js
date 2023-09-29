@@ -2,7 +2,7 @@ const chapters = {
     intro: {
         titre: 'Intro',
         description: '\nVous êtes un des soldats d\'un escadron de soldat ramené à la vie. \nEn plein milieu d\'une guerre contre l\'ennemi. \nLe soldat immortel a été capturé par l\'ennemi. \n \nVous avez ordre de le retrouver avec votre escadron : \nNick, Bombe, Alive et vous.',
-        image: './assets/images/image_histoire/image_transformer/homme_militaire_de_dos-modifier.jpg',
+        image: './assets/images/image_histoire/image_transformer/homme_militaire_de_dos-modifer.jpg',
         bouton: [
             { titre: 'Commancer', 'destination': 'choixDepart' }
         ]
@@ -179,10 +179,31 @@ const imageChapter = document.querySelector('.image');
 const containButton = document.querySelector('.bouton');
 const allButton = document.querySelectorAll('button');
 
+/*
 function goToChapter(chapter) {
     if (chapters[chapter] !== undefined) {
         console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
         for (let i in chapters[chapter].bouton) {
+            console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
+        }
+    }
+    else {
+        console.log('Mauvaise clé.');
+    }
+    
+}
+*/
+
+function goToChapter(chapter) {
+    if (chapters[chapter] !== undefined) {
+        title.textContent = (chapters[chapter].titre);
+        chapterDescription.textContent = (chapters[chapter].description);
+        imageChapter.src = (chapters[chapter].image);
+        //console.log :
+        console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
+        for (let i in chapters[chapter].bouton) {
+            allButton[i].textContent = (chapters[chapter].bouton[i].titre); 
+            //console.log :
             console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
         }
     }
