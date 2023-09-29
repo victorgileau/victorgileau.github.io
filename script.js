@@ -171,6 +171,14 @@ const chapters = {
     
 }
 
+const cadreJeu = document.querySelector('#jeu');
+const imgLogo = document.querySelector('#logo');
+const title = document.querySelector('#titre');
+const chapterDescription = document.querySelector('p');
+const imageChapter = document.querySelector('.image');
+const containButton = document.querySelector('.bouton');
+const allButton = document.querySelectorAll('button');
+
 function goToChapter(chapter) {
     if (chapters[chapter] !== undefined) {
         console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
