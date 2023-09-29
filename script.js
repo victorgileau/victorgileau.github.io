@@ -202,7 +202,9 @@ function goToChapter(chapter) {
         //console.log :
         console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
         for (let i in chapters[chapter].bouton) {
-            allButton[i].textContent = (chapters[chapter].bouton[i].titre); 
+            allButton[i].textContent = (chapters[chapter].bouton[i].titre);
+            let bouton = document.createElement('button');
+            containButton.appendChild(bouton);
             //console.log :
             console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
         }
