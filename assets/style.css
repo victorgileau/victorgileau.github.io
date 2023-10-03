@@ -46,7 +46,6 @@ body {
 }
 
 .image {
-    order: 2;
     border-radius: 10%;
     min-width: 200px;
     max-width: 400px;
@@ -58,7 +57,6 @@ body {
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    order: 2;
     padding: 5px;
 }
 
@@ -73,18 +71,6 @@ button {
     color: #e0baba;
     box-shadow: 5px 5px 10px #000000;
     border: 1px solid #000000;
-}
-
-button#btUn {
-    align-self: flex-start;
-}
-
-button#btDeux {
-    align-self: center;
-}
-
-button#btTrois {
-    align-self: flex-end;
 }
 
 button:hover {

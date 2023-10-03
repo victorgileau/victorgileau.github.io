@@ -176,8 +176,7 @@ const imgLogo = document.querySelector('#logo');
 const title = document.querySelector('#titre');
 const chapterDescription = document.querySelector('p');
 const imageChapter = document.querySelector('.image');
-const containButton = document.querySelector('.bouton');
-const allButton = document.querySelectorAll('button');
+const containButton = document.querySelector('.boutons');
 
 /*
 function goToChapter(chapter) {
@@ -201,10 +200,20 @@ function goToChapter(chapter) {
         imageChapter.src = (chapters[chapter].image);
         //console.log :
         console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
-        for (let i in chapters[chapter].bouton) {
-            allButton[i].textContent = (chapters[chapter].bouton[i].titre);
-            let bouton = document.createElement('button');
-            containButton.appendChild(bouton);
+        
+        while (containButton.firstChild) {
+            containButton.removeChild(containButton.firstChild);
+        }
+
+        for (let i = 0; i < chapters[chapter].bouton.length; i++) {
+            //allButton[i].textContent = (chapters[chapter].bouton[i].titre);
+            const boutonNouveau = document.createElement('button');
+            boutonNouveau.textContent = chapters[chapter].bouton[i].titre;
+            boutonNouveau.addEventListener('click', () => {
+                goToChapter(chapters[chapter].bouton[i].destination);
+            });
+
+            containButton.appendChild(boutonNouveau);
             //console.log :
             console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
         }
