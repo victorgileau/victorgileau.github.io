@@ -161,7 +161,7 @@ const chapters = {
     },
 
     bombeChoixNiveauQuatreFin: {
-        titre: 'Uh sacrifice glorieux',
+        titre: 'Un sacrifice glorieux',
         description: '\nBombe dit avec un ton certain : Je vais vous sauver les gars. \nBombe fait le kamikaze et élimine l\'ennemi ce qui crée la zone sécurisée. \n\nL\'objectif est sauvé. Vous avez maintenant une chance de gagner la guerre avec l\'aide de l\'immortel. \n\n FIN',
         image: './assets/images/image_histoire/image_transformer/hommex2_miltaire_fumee-modifer.jpg',
         bouton: [
