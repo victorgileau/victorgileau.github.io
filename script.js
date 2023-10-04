@@ -222,6 +222,8 @@ function goToChapter(chapter) {
     else {
         console.log('Mauvaise clé.');
     }
+
+    
     
 }
 
