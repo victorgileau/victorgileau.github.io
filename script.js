@@ -78,7 +78,7 @@ const chapters = {
     vehiculeChoixNiveauUn: {
         titre: 'Utiliser un véhicule comme bouclier.',
         description: '\nLe véhicule est une bonne défense. Tous les membres de l\'escadron survivent. Mais le véhicule ne fonctionne plus.',
-        image: './assets/images/image_histoire/image_transformer/millitaire_homme_debout_redard-vers-camera-modifier.jpg',
+        image: './assets/images/image_histoire/image_transformer/vehicule_militaire-modifier.jpg',
         bouton: [
             { titre: 'Continuer', 'destination': 'finNiveauUn' }
         ]
@@ -162,7 +162,7 @@ const chapters = {
 
     bombeChoixNiveauQuatreFin: {
         titre: 'Un sacrifice glorieux',
-        description: '\nBombe dit avec un ton certain : Je vais vous sauver les gars. \nBombe fait le kamikaze et élimine l\'ennemi ce qui crée la zone sécurisée. \n\nL\'objectif est sauvé. Vous avez maintenant une chance de gagner la guerre avec l\'aide de l\'immortel. \n\n FIN',
+        description: '\nBombe dit avec un ton certain : Je vais vous sauver les gars. \nBombe fait le kamikaze et élimine l\'ennemi ce qui crée la zone sécurisée. \n\nL\'objectif est sauvé. Vous avez maintenant une chance de gagner la guerre avec l\'aide de l\'immortel. \n\n ...FIN',
         image: './assets/images/image_histoire/image_transformer/hommex2_miltaire_fumee-modifer.jpg',
         bouton: [
             { titre: 'Succès - Recommancer', 'destination': 'intro' }
@@ -170,11 +170,11 @@ const chapters = {
     },
 
     choixNonDisponible: {
-        titre: 'Un sacrifice glorieux',
+        titre: 'Indisponible - Bombe est Mort',
         description: '\nCe choix n\'est pas disponible.',
-        image: './assets/images/image_histoire/image_transformer/hommex2_miltaire_fumee-modifer.jpg',
+        image: './assets/images/image_histoire/image_transformer/homme_masque_ordre-modifier.jpg',
         bouton: [
-            { titre: 'Succès - Recommancer', 'destination': 'intro' }
+            { titre: 'Revenir dernier chapitre', 'destination': 'intro' }
         ]
     },
     
@@ -215,10 +215,31 @@ function goToChapter(chapter) {
             containButton.removeChild(containButton.firstChild);
         }
 
+        if ([chapter] == 'bombeChoixNiveauTroix' || [chapter] == 'trancherChoixNiveauUn') {
+            isBombeDead = true;
+        }
+        if ([chapter] == 'choixNiveauTroix') {
+            if (isBombeDead == true) {
+                chapters.choixNiveauTroix.bouton[0].destination = 'choixNonDisponible';
+                chapters.choixNonDisponible.bouton[0].destination = 'choixNiveauTroix';
+            }
+        }
+        if ([chapter] == 'choixNiveauQuatre') {
+            if (isBombeDead == true) {
+                chapters.choixNiveauQuatre.bouton[0].destination = 'choixNonDisponible';
+                chapters.choixNonDisponible.bouton[0].titre = 'Recommancer';
+                chapters.choixNonDisponible.bouton[0].destination = 'intro';
+                isBombeDead = false;
+            }
+            else {
+                chapters.choixNiveauQuatre.bouton[0].destination = 'bombeChoixNiveauQuatreFin';
+            }
+        }
+
         for (let i = 0; i < chapters[chapter].bouton.length; i++) {
             //allButton[i].textContent = (chapters[chapter].bouton[i].titre);
             const boutonNouveau = document.createElement('button');
-            boutonNouveau.textContent = chapters[chapter].bouton[i].titre;
+            boutonNouveau.innerHTML = chapters[chapter].bouton[i].titre;
             boutonNouveau.addEventListener('click', () => {
                 goToChapter(chapters[chapter].bouton[i].destination);
             });
@@ -226,15 +247,6 @@ function goToChapter(chapter) {
             containButton.appendChild(boutonNouveau);
             //console.log :
             console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
-        }
-        if (chapter == 'bombeChoixNiveauTroix' || chapter == 'trancherChoixNiveauUn') {
-            isBombeDead = true;
-        }
-        if (isBombeDead == true) {
-            chapters.choixNiveauTroix.bouton['Bombe'].titre = 'Option non disponible';
-            chapters.choixNiveauTroix.bouton['Bombe'].destination = 'intro';
-            chapters.choixNiveauQuatre.bouton['Bombe'].titre = 'Option non disponible';
-            chapters.choixNiveauQuatre.bouton['Bombe'].destination = 'intro';
         }
     }
     else {
