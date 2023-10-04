@@ -168,6 +168,15 @@ const chapters = {
             { titre: 'Succès - Recommancer', 'destination': 'intro' }
         ]
     },
+
+    choixNonDisponible: {
+        titre: 'Un sacrifice glorieux',
+        description: '\nCe choix n\'est pas disponible.',
+        image: './assets/images/image_histoire/image_transformer/hommex2_miltaire_fumee-modifer.jpg',
+        bouton: [
+            { titre: 'Succès - Recommancer', 'destination': 'intro' }
+        ]
+    },
     
 }
 
@@ -217,6 +226,15 @@ function goToChapter(chapter) {
             containButton.appendChild(boutonNouveau);
             //console.log :
             console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
+        }
+        if (chapter == 'bombeChoixNiveauTroix' || chapter == 'trancherChoixNiveauUn') {
+            isBombeDead = true;
+        }
+        if (isBombeDead == true) {
+            chapters.choixNiveauTroix.bouton['Bombe'].titre = 'Option non disponible';
+            chapters.choixNiveauTroix.bouton['Bombe'].destination = 'intro';
+            chapters.choixNiveauQuatre.bouton['Bombe'].titre = 'Option non disponible';
+            chapters.choixNiveauQuatre.bouton['Bombe'].destination = 'intro';
         }
     }
     else {
