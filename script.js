@@ -4,7 +4,7 @@ const chapters = {
         description: '\nVous êtes un des soldats d\'un escadron de soldat ramené à la vie. \nEn plein milieu d\'une guerre contre l\'ennemi. \nLe soldat immortel a été capturé par l\'ennemi. \n \nVous avez ordre de le retrouver avec votre escadron : \nNick, Bombe, Alive et vous.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_de_dos-modifer.jpg',
         bouton: [
-            { titre: 'Commancer', 'destination': 'choixDepart' }
+            { titre: 'Commencer', 'destination': 'choixDepart' }
         ]
     },
 
@@ -24,7 +24,7 @@ const chapters = {
         description: '\nVous êtes tuer par l\'ennemi. Pour avoir pris une décision aussi stupide.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_tire-modifer.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'intro' }
+            { titre: 'Recommencer', 'destination': 'intro' }
         ]
     },
 
@@ -33,7 +33,7 @@ const chapters = {
         description: '\nVous avez été exécuté pour avoir désobéi un ordre direct. C\'était une certitude.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_tire-modifer.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'intro' }
+            { titre: 'Recommencer', 'destination': 'intro' }
         ]
     },
 
@@ -62,7 +62,7 @@ const chapters = {
         description: '\nVous êtes tuer par l\'ennemi, conseille d\'ami ne pas foncer tout droit dans un champ de bataille.',
         image: './assets/images/image_histoire/image_transformer/homme_militaire_tire-modifer.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'intro' }
+            { titre: 'Recommencer', 'destination': 'intro' }
         ]
     },
 
@@ -109,7 +109,7 @@ const chapters = {
         description: '\nBombe qui comprend vos ordres à travers les tirs ennemis et courre sur le champ de bataille et puis... \n Bombe pose le pied sur une mine et dit \"merde\". Il meurt.',
         image: './assets/images/image_histoire/image_transformer/militaire_vissage_cacher_regard-de_cote-modifer.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'intro' }
+            { titre: 'Recommencer', 'destination': 'intro' }
         ]
     },
 
@@ -118,7 +118,7 @@ const chapters = {
         description: '\nVous proposer à vos coéquipiers en criant : On pourrait sacrifier Nick!!! \nMais la réaction est très négative de la part de votre équipe vous êtes tué pour vouloir tuer le farceur Nick.',
         image: './assets/images/image_histoire/image_transformer/deux_militaire-modifier.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'intro' }
+            { titre: 'Recommencer', 'destination': 'intro' }
         ]
     },
 
@@ -133,7 +133,7 @@ const chapters = {
 
     choixNiveauQuatre: {
         titre: 'Un choix difficile...',
-        description: '\nVous devez trouver une façon de détruire l\'ennemi protégeant l\'objectif pour sécuriser la zone. \nVos coéquipiers et vous doivent trouver une solution, mais la quel?',
+        description: '\nVous devez trouver une façon de détruire l\'ennemi protégeant l\'objectif pour sécuriser la zone. \nVos coéquipiers et vous devez trouver une solution, mais laquelle?',
         image: './assets/images/image_histoire/image_transformer/batiment_detruit-modifier.jpg',
         bouton: [
             { titre: 'Bombe', 'destination': 'bombeChoixNiveauQuatreFin' },
@@ -147,16 +147,16 @@ const chapters = {
         description: '\nVous voyez tout la difficulté de la situation dans laquelle votre escadron se trouve. Il manque de munition et le moral est bas.\nVous foncer vers l\'ennemi pour déstabiliser l\'ennemi et rallumer la flame de vos confrères. \n\n\nMais malheureusement vous mourrez d\'un tir à la tête en un instant.',
         image: './assets/images/image_histoire/image_transformer/homme_masque_ordre-modifier.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'intro' }
+            { titre: 'Recommencer', 'destination': 'intro' }
         ]
     },
 
     nickChoixNiveauQuatre: {
         titre: 'Uh échec pour la gloire',
-        description: '\nNick crie qui va les sauver : Je vais tout vous sauver!!! \nNick enlève la goupille d\'une grenade, mais une blessure à son bras fait en sorte qu\'il l\'échappe, ce qui tue tout votre escadron. \nIl ne vous a pas sauvé du tout.',
+        description: '\nNick crie qui va les sauver : Je vais tout vous sauver!!! \nNick enlève la goupille d\'une grenade, mais une blessure à son bras fait en sorte qu\'il l\'échappe, ce qui tue tout votre escadron. \nIl ne vous à pas sauvé du tout.',
         image: './assets/images/image_histoire/image_transformer/explosion_carre-modifier.jpg',
         bouton: [
-            { titre: 'Recommancer', 'destination': 'intro' }
+            { titre: 'Recommencer', 'destination': 'intro' }
         ]
     },
 
@@ -165,7 +165,7 @@ const chapters = {
         description: '\nBombe dit avec un ton certain : Je vais vous sauver les gars. \nBombe fait le kamikaze et élimine l\'ennemi ce qui crée la zone sécurisée. \n\nL\'objectif est sauvé. Vous avez maintenant une chance de gagner la guerre avec l\'aide de l\'immortel. \n\n ...FIN',
         image: './assets/images/image_histoire/image_transformer/hommex2_miltaire_fumee-modifer.jpg',
         bouton: [
-            { titre: 'Succès - Recommancer', 'destination': 'intro' }
+            { titre: 'Succès - Recommencer', 'destination': 'intro' }
         ]
     },
 
@@ -221,6 +221,7 @@ function goToChapter(chapter) {
         if ([chapter] == 'choixNiveauTroix') {
             if (isBombeDead == true) {
                 chapters.choixNiveauTroix.bouton[0].destination = 'choixNonDisponible';
+                chapters.choixNonDisponible.bouton[0].titre = 'Revenir dernier chapitre';
                 chapters.choixNonDisponible.bouton[0].destination = 'choixNiveauTroix';
             }
         }
