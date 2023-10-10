@@ -215,7 +215,7 @@ function goToChapter(chapter) {
             containButton.removeChild(containButton.firstChild);
         }
 
-        if ([chapter] == 'bombeChoixNiveauTroix' || [chapter] == 'trancherChoixNiveauUn') {
+        if ([chapter] == 'trancherChoixNiveauUn') {
             isBombeDead = true;
         }
         if ([chapter] == 'choixNiveauTroix') {
