@@ -227,7 +227,7 @@ function goToChapter(chapter) {
         for (let i = 0; i < chapters[chapter].bouton.length; i++) {
             //allButton[i].textContent = (chapters[chapter].bouton[i].titre);
             const boutonNouveau = document.createElement('button');
-            boutonNouveau.innerHTML = chapters[chapter].bouton[i].titre;
+            boutonNouveau.textContent = chapters[chapter].bouton[i].titre;
             boutonNouveau.addEventListener('click', () => {
                 goToChapter(chapters[chapter].bouton[i].destination);
             });
