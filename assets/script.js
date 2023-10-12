@@ -188,20 +188,7 @@ const imageChapter = document.querySelector('.image');
 const containButton = document.querySelector('.boutons');
 let isBombeDead = false;
 
-/*
-function goToChapter(chapter) {
-    if (chapters[chapter] !== undefined) {
-        console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
-        for (let i in chapters[chapter].bouton) {
-            console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
-        }
-    }
-    else {
-        console.log('Mauvaise clé.');
-    }
-    
-}
-*/
+
 
 function goToChapter(chapter) {
     if (chapters[chapter] !== undefined) {
@@ -259,6 +246,21 @@ function goToChapter(chapter) {
 }
 
 goToChapter('intro');
+
+/*
+function goToChapter(chapter) {
+    if (chapters[chapter] !== undefined) {
+        console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
+        for (let i in chapters[chapter].bouton) {
+            console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
+        }
+    }
+    else {
+        console.log('Mauvaise clé.');
+    }
+    
+}
+*/
 
 /*
 if (goToChapter('bombeChoixNiveauTroix') || goToChapter('trancherChoixNiveauUn')) {
