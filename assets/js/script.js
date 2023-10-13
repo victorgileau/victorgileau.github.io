@@ -200,11 +200,16 @@ function goToChapter(chapter) {
             containButton.removeChild(containButton.firstChild);
         }
 
+        //si chapter est égale a l'objet trancherChoixNiveauUn
+        //isBombeDead devien true car il meurt dans l'histoire en passant par les tranchées, mais n'a pas fait échouer la mission
         if ([chapter] == 'trancherChoixNiveauUn') {
             isBombeDead = true;
         }
 
-
+        //si chapter est égale a l'objet choixNiveauTroix, qui contient un if (isBombeDead == true)
+        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'choixNonDisponible'
+        //change le titre du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'Revenir dernier chapitre'
+        //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'choixNiveauTroix'
         if ([chapter] == 'choixNiveauTroix') {
             if (isBombeDead == true) {
                 chapters.choixNiveauTroix.bouton[0].destination = 'choixNonDisponible';
@@ -213,6 +218,14 @@ function goToChapter(chapter) {
             }
         }
 
+        //si chapter est égale a l'objet choixNiveauQuatre, qui contient un if (isBombeDead == true)
+        //if (isBombeDead == true) :
+        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'choixNonDisponible'
+        //change le titre du premier bouton dans le tableau de l'objet(choixNonDisponible) pour 'Recommancer'
+        //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'intro'
+        //change isBombeDead a false pour reset la variable vu que le bouton dans l'objet(choixNonDisponible) retourne au début
+        //else :
+        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'bombeChoixNiveauQuatreFin' (c'est l'option original qui dirige vers la (bonne) fin
         if ([chapter] == 'choixNiveauQuatre') {
             if (isBombeDead == true) {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'choixNonDisponible';
