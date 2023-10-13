@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: "Delivery";
-    src: url("./font/wrong_delivery/Wrong\ Delivery.ttf") format("truetype");
+    src: url("./font/Wrong\ Delivery.ttf") format("truetype");
 }
 
 * {
@@ -16,7 +16,7 @@ body {
     background-color: #000000;
     max-width: 100vw;
     min-height: 100vh;
-    background-image: url('./images/image_histoire/image_transformer/perso_arme_feminin-modifer.jpg');
+    background-image: url('../images/perso_arme_feminin-modifer.jpg');
     background-repeat: repeat-y;
     background-size: 100%;
 }
