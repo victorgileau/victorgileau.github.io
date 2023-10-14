@@ -187,7 +187,7 @@ const chapterDescription = document.querySelector('p');
 const imageChapter = document.querySelector('.image');
 const containButton = document.querySelector('.boutons');
 let isBombeDead = false;
-//@todo: ajouter commentaire pour la twist 
+
 function goToChapter(chapterName) {
     const chapter = chapters[chapterName];
 
@@ -227,7 +227,7 @@ function goToChapter(chapterName) {
         //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'intro'
         //change isBombeDead a false pour reset la variable vu que le bouton dans l'objet(choixNonDisponible) retourne au début
         //else :
-        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'bombeChoixNiveauQuatreFin' (c'est l'option original qui dirige vers la (bonne) fin
+        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'bombeChoixNiveauQuatreFin' (c'est l'option original qui dirige vers la (bonne) fin)
         if ([chapterName] == 'choixNiveauQuatre') {
             if (isBombeDead == true) {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'choixNonDisponible';
@@ -249,9 +249,10 @@ function goToChapter(chapterName) {
 
             containButton.appendChild(boutonNouveau);
     
-            console.log(`${chapter.bouton[i].titre} \nClé : ${chapter.bouton[i].destination}`);
+            console.log(`${chapter.bouton[i].titre} \nClé : écrire goToChapter(${chapter.bouton[i].destination})`);
         }
     }
+
     else {
         console.log('Mauvaise clé.');
     }
