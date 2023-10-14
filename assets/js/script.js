@@ -188,13 +188,15 @@ const imageChapter = document.querySelector('.image');
 const containButton = document.querySelector('.boutons');
 let isBombeDead = false;
 //@todo: ajouter commentaire pour la twist 
-function goToChapter(chapter) {
-    if (chapters[chapter] !== undefined) {
-        title.textContent = (chapters[chapter].titre);
-        chapterDescription.textContent = (chapters[chapter].description);
-        imageChapter.src = (chapters[chapter].image);
+function goToChapter(chapterName) {
+    const chapter = chapters[chapterName];
 
-        console.log(`${chapters[chapter].titre} \n ${chapters[chapter].description}`);
+    if (chapter !== undefined) {
+        title.textContent = (chapter.titre);
+        chapterDescription.textContent = (chapter.description);
+        imageChapter.src = (chapter.image);
+
+        console.log(`${chapter.titre} \n ${chapter.description}`);
         
         while (containButton.firstChild) {
             containButton.removeChild(containButton.firstChild);
@@ -202,7 +204,7 @@ function goToChapter(chapter) {
 
         //si chapter est égale a l'objet trancherChoixNiveauUn
         //isBombeDead devien true car il meurt dans l'histoire en passant par les tranchées, mais n'a pas fait échouer la mission
-        if ([chapter] == 'trancherChoixNiveauUn') {
+        if ([chapterName] == 'trancherChoixNiveauUn') {
             isBombeDead = true;
         }
 
@@ -210,7 +212,7 @@ function goToChapter(chapter) {
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'choixNonDisponible'
         //change le titre du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'Revenir dernier chapitre'
         //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'choixNiveauTroix'
-        if ([chapter] == 'choixNiveauTroix') {
+        if ([chapterName] == 'choixNiveauTroix') {
             if (isBombeDead == true) {
                 chapters.choixNiveauTroix.bouton[0].destination = 'choixNonDisponible';
                 chapters.choixNonDisponible.bouton[0].titre = 'Revenir dernier chapitre';
@@ -226,7 +228,7 @@ function goToChapter(chapter) {
         //change isBombeDead a false pour reset la variable vu que le bouton dans l'objet(choixNonDisponible) retourne au début
         //else :
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'bombeChoixNiveauQuatreFin' (c'est l'option original qui dirige vers la (bonne) fin
-        if ([chapter] == 'choixNiveauQuatre') {
+        if ([chapterName] == 'choixNiveauQuatre') {
             if (isBombeDead == true) {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'choixNonDisponible';
                 chapters.choixNonDisponible.bouton[0].titre = 'Recommancer';
@@ -238,16 +240,16 @@ function goToChapter(chapter) {
             }
         }
 
-        for (let i = 0; i < chapters[chapter].bouton.length; i++) {
+        for (let i = 0; i < chapter.bouton.length; i++) {
             const boutonNouveau = document.createElement('button');
-            boutonNouveau.textContent = chapters[chapter].bouton[i].titre;
+            boutonNouveau.textContent = chapter.bouton[i].titre;
             boutonNouveau.addEventListener('click', () => {
-                goToChapter(chapters[chapter].bouton[i].destination);
+                goToChapter(chapter.bouton[i].destination);
             });
 
             containButton.appendChild(boutonNouveau);
     
-            console.log(`${chapters[chapter].bouton[i].titre} \nClé : ${chapters[chapter].bouton[i].destination}`);
+            console.log(`${chapter.bouton[i].titre} \nClé : ${chapter.bouton[i].destination}`);
         }
     }
     else {
