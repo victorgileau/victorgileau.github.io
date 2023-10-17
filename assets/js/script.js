@@ -212,11 +212,16 @@ function goToChapter(chapterName) {
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'choixNonDisponible'
         //change le titre du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'Revenir dernier chapitre'
         //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'choixNiveauTroix'
+        //else :
+        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'bombeChoixNiveauTroix' (c'est l'option original qui dirige vers la bonne option)
         if ([chapterName] == 'choixNiveauTroix') {
             if (isBombeDead == true) {
                 chapters.choixNiveauTroix.bouton[0].destination = 'choixNonDisponible';
                 chapters.choixNonDisponible.bouton[0].titre = 'Revenir dernier chapitre';
                 chapters.choixNonDisponible.bouton[0].destination = 'choixNiveauTroix';
+            }
+            else {
+                chapters.choixNiveauTroix.bouton[0].destination = 'bombeChoixNiveauTroix';
             }
         }
 
