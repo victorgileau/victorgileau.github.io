@@ -5,7 +5,7 @@ const chapters = {
         image: './assets/images/homme_militaire_de_dos-modifer.jpg',
         bouton: [
             { titre: 'Commencer', destination: 'choixDepart' }
-        ]
+        ],
     },
 
     choixDepart: {
@@ -16,7 +16,7 @@ const chapters = {
             { titre: 'Fuir', destination: 'fuirChoixDepart' },
             { titre: 'Accepter', destination: 'accepterChoixDepart' },
             { titre: 'Refuser', destination: 'refuserChoixDepart' }
-        ]
+        ],
     },
 
     fuirChoixDepart: {
@@ -25,7 +25,7 @@ const chapters = {
         image: './assets/images/homme_militaire_tire-modifer.jpg',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
-        ]
+        ],
     },
 
     refuserChoixDepart: {
@@ -34,7 +34,7 @@ const chapters = {
         image: './assets/images/homme_militaire_tire-modifer.jpg',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
-        ]
+        ],
     },
 
     accepterChoixDepart: {
@@ -43,7 +43,7 @@ const chapters = {
         image: './assets/images/groupe_militaire_arme-modifier.jpg',
         bouton: [
             { titre: 'Continuer', destination: 'choixNiveauUn' }
-        ]
+        ],
     },
 
     choixNiveauUn: {
@@ -54,7 +54,7 @@ const chapters = {
             { titre: 'Foncer', destination: 'foncerChoixNiveauUn' },
             { titre: 'Utiliser un véhicule', destination: 'vehiculeChoixNiveauUn' },
             { titre: 'Trancher', destination: 'trancherChoixNiveauUn' }
-        ]
+        ],
     },
 
     foncerChoixNiveauUn: {
@@ -63,7 +63,7 @@ const chapters = {
         image: './assets/images/homme_militaire_tire-modifer.jpg',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
-        ]
+        ],
     },
 
     trancherChoixNiveauUn: {
@@ -72,7 +72,7 @@ const chapters = {
         image: './assets/images/millitaire_homme_debout_redard-vers-camera-modifier.jpg',
         bouton: [
             { titre: 'Continuer', destination: 'finNiveauUn' }
-        ]
+        ],
     },
 
     vehiculeChoixNiveauUn: {
@@ -81,7 +81,7 @@ const chapters = {
         image: './assets/images/vehicule_militaire-modifier.jpg',
         bouton: [
             { titre: 'Continuer', destination: 'finNiveauUn' }
-        ]
+        ],
     },
 
     finNiveauUn: {
@@ -90,7 +90,7 @@ const chapters = {
         image: './assets/images/homme_militaire_de_dos-modifer.jpg',
         bouton: [
             { titre: 'Continuer', destination: 'choixNiveauTroix' }
-        ]
+        ],
     },
 
     choixNiveauTroix: {
@@ -101,7 +101,7 @@ const chapters = {
             { titre: 'Bombe', destination: 'bombeChoixNiveauTroix' },
             { titre: 'Nick', destination: 'nickChoixNiveauTroix' },
             { titre: 'Alive', destination: 'aliveChoixNiveauTroix' }
-        ]
+        ],
     },
 
     bombeChoixNiveauTroix: {
@@ -110,7 +110,7 @@ const chapters = {
         image: './assets/images/militaire_vissage_cacher_regard-de_cote-modifer.jpg',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
-        ]
+        ],
     },
 
     nickChoixNiveauTroix: {
@@ -119,7 +119,7 @@ const chapters = {
         image: './assets/images/deux_militaire-modifier.jpg',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
-        ]
+        ],
     },
 
     aliveChoixNiveauTroix: {
@@ -128,7 +128,7 @@ const chapters = {
         image: './assets/images/homme_militaire_glise-desert-modifer.jpg',
         bouton: [
             { titre: 'Continuer', destination: 'choixNiveauQuatre' }
-        ]
+        ],
     },
 
     choixNiveauQuatre: {
@@ -139,7 +139,7 @@ const chapters = {
             { titre: 'Bombe', destination: 'bombeChoixNiveauQuatreFin' },
             { titre: 'Vous', destination: 'vousChoixNiveauQuatre' },
             { titre: 'Nick', destination: 'nickChoixNiveauQuatre' }
-        ]
+        ],
     },
 
     vousChoixNiveauQuatre: {
@@ -148,7 +148,7 @@ const chapters = {
         image: './assets/images/homme_masque_ordre-modifier.jpg',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
-        ]
+        ],
     },
 
     nickChoixNiveauQuatre: {
@@ -157,7 +157,7 @@ const chapters = {
         image: './assets/images/explosion_carre-modifier.jpg',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
-        ]
+        ],
     },
 
     bombeChoixNiveauQuatreFin: {
@@ -166,7 +166,7 @@ const chapters = {
         image: './assets/images/hommex2_miltaire_fumee-modifer.jpg',
         bouton: [
             { titre: 'Succès - Recommencer', destination: 'intro' }
-        ]
+        ],
     },
 
     choixNonDisponible: {
@@ -175,7 +175,7 @@ const chapters = {
         image: './assets/images/homme_masque_ordre-modifier.jpg',
         bouton: [
             { titre: 'Revenir dernier chapitre', destination: 'intro' }
-        ]
+        ],
     },
     
 }
@@ -202,13 +202,19 @@ function goToChapter(chapterName) {
             containButton.removeChild(containButton.firstChild);
         }
 
-        //si chapter est égale a l'objet trancherChoixNiveauUn
+        //si chapterName est égale a l'objet trancherChoixNiveauUn
         //isBombeDead devien true car il meurt dans l'histoire en passant par les tranchées, mais n'a pas fait échouer la mission
         if ([chapterName] == 'trancherChoixNiveauUn') {
             isBombeDead = true;
         }
 
-        //si chapter est égale a l'objet choixNiveauTroix, qui contient un if (isBombeDead == true)
+        //si chapterName est égale a l'objet vehiculeChoixNiveauUn
+        //isBombeDead devien false car il ne meurt pas donc doit rester une option possible
+        if ([chapterName] == 'vehiculeChoixNiveauUn') {
+            isBombeDead = false;
+        }
+
+        //si chapterName est égale a l'objet choixNiveauTroix, qui contient un if (isBombeDead == true)
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'choixNonDisponible'
         //change le titre du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'Revenir dernier chapitre'
         //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'choixNiveauTroix'
@@ -225,7 +231,7 @@ function goToChapter(chapterName) {
             }
         }
 
-        //si chapter est égale a l'objet choixNiveauQuatre, qui contient un if (isBombeDead == true)
+        //si chapterName est égale a l'objet choixNiveauQuatre, qui contient un if (isBombeDead == true)
         //if (isBombeDead == true) :
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'choixNonDisponible'
         //change le titre du premier bouton dans le tableau de l'objet(choixNonDisponible) pour 'Recommancer'
@@ -233,6 +239,8 @@ function goToChapter(chapterName) {
         //change isBombeDead a false pour reset la variable vu que le bouton dans l'objet(choixNonDisponible) retourne au début
         //else :
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'bombeChoixNiveauQuatreFin' (c'est l'option original qui dirige vers la (bonne) fin)
+        //après :
+        //isBombeDead = false / reset la valeur a tous les recommencement du début avant de revenir au début
         if ([chapterName] == 'choixNiveauQuatre') {
             if (isBombeDead == true) {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'choixNonDisponible';
@@ -242,7 +250,9 @@ function goToChapter(chapterName) {
             }
             else {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'bombeChoixNiveauQuatreFin';
+                isBombeDead = false;
             }
+            isBombeDead = false;
         }
 
         for (let i = 0; i < chapter.bouton.length; i++) {
