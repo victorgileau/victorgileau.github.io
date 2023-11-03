@@ -3,6 +3,7 @@ const chapters = {
         titre: 'Intro',
         description: '\nVous êtes un des soldats d\'un escadron de soldat ramené à la vie. \nEn plein milieu d\'une guerre contre l\'ennemi. \nLe soldat immortel a été capturé par l\'ennemi. \n \nVous avez ordre de le retrouver avec votre escadron : \nNick, Bombe, Alive et vous.',
         image: './assets/images/homme_militaire_de_dos-modifer.jpg',
+        video: './assets/videos/WW2_Eastern_Front_Battle_Footage-480p.mp4',
         bouton: [
             { titre: 'Commencer', destination: 'choixDepart' }
         ],
@@ -185,6 +186,7 @@ const imgLogo = document.querySelector('#logo');
 const title = document.querySelector('#titre');
 const chapterDescription = document.querySelector('p');
 const imageChapter = document.querySelector('.image');
+const videoChapter = document.querySelector('.videoContneur');
 const containButton = document.querySelector('.boutons');
 let isBombeDead = false;
 
@@ -194,7 +196,16 @@ function goToChapter(chapterName) {
     if (chapter !== undefined) {
         title.textContent = (chapter.titre);
         chapterDescription.textContent = (chapter.description);
-        imageChapter.src = (chapter.image);
+        if (chapter.video == undefined) {
+            imageChapter.src = (chapter.image);
+        }
+        /*
+        else {
+            imageChapter.setAttribute('display', 'none')
+            const videoChapter = document.querySelector('.video');
+            videoChapter.src = (chapter.video);
+        }
+        */
 
         console.log(`${chapter.titre} \n ${chapter.description}`);
         

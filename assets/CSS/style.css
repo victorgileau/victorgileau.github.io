@@ -61,6 +61,15 @@ p {
     padding: 10px;
 }
 
+.video {
+    display: none;
+    border-radius: 10%;
+    min-width: 200px;
+    max-width: 400px;
+    height: 350px;
+    padding: 10px;
+}
+
 .boutons {
     display: flex;
     flex-direction: row;
