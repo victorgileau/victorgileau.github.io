@@ -187,3 +187,11 @@ button:active {
         font-size: 1em;
     }
 }
+
+/* Pour utilisateur qui utiliser dark mode :
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        filter: blur(0.5px) contrast(120%) saturate(0%);
+    }
+}
+*/

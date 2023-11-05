@@ -268,19 +268,16 @@ function goToChapter(chapterName) {
             containButton.removeChild(containButton.firstChild);
         }
 
-        //si chapterName est égale a l'objet trancherChoixNiveauUn
         //isBombeDead devien true car il meurt dans l'histoire en passant par les tranchées, mais n'a pas fait échouer la mission
         if ([chapterName] == 'trancherChoixNiveauUn') {
             isBombeDead = true;
         }
 
-        //si chapterName est égale a l'objet vehiculeChoixNiveauUn
         //isBombeDead devien false car il ne meurt pas donc doit rester une option possible
         if ([chapterName] == 'vehiculeChoixNiveauUn') {
             isBombeDead = false;
         }
 
-        //si chapterName est égale a l'objet choixNiveauTroix, qui contient un if (isBombeDead == true)
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'choixNonDisponible'
         //change le titre du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'Revenir dernier chapitre'
         //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'choixNiveauTroix'
@@ -297,7 +294,6 @@ function goToChapter(chapterName) {
             }
         }
 
-        //si chapterName est égale a l'objet choixNiveauQuatre, qui contient un if (isBombeDead == true)
         //if (isBombeDead == true) :
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'choixNonDisponible'
         //change le titre du premier bouton dans le tableau de l'objet(choixNonDisponible) pour 'Recommancer'
