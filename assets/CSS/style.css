@@ -54,6 +54,7 @@ p {
 }
 
 .image {
+    order: 2;
     border-radius: 10%;
     min-width: 200px;
     max-width: 400px;
@@ -62,15 +63,20 @@ p {
 }
 
 .video {
-    display: none;
+    order: 1;
     border-radius: 10%;
     min-width: 200px;
-    max-width: 400px;
+    max-width: 600px;
     height: 350px;
     padding: 10px;
 }
 
+.hidden {
+    display: none;
+}
+
 .boutons {
+    order: 3;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

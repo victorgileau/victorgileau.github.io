@@ -186,7 +186,7 @@ const imgLogo = document.querySelector('#logo');
 const title = document.querySelector('#titre');
 const chapterDescription = document.querySelector('p');
 const imageChapter = document.querySelector('.image');
-const videoChapter = document.querySelector('.videoContneur');
+const videoChapter = document.querySelector('.video');
 const containButton = document.querySelector('.boutons');
 let isBombeDead = false;
 
@@ -196,16 +196,30 @@ function goToChapter(chapterName) {
     if (chapter !== undefined) {
         title.textContent = (chapter.titre);
         chapterDescription.textContent = (chapter.description);
-        if (chapter.video == undefined) {
-            imageChapter.src = (chapter.image);
+        
+        const video = document.createElement('video');
+        cadreJeu.appendChild(video);
+        
+
+        if (chapter.video != undefined) {
+            video.classList.remove('hidden');
+            video.src = chapter.video;
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.setAttribute('class', 'video');
+            cadreJeu.removeChild(imageChapter);
         }
-        /*
         else {
-            imageChapter.setAttribute('display', 'none')
-            const videoChapter = document.querySelector('.video');
-            videoChapter.src = (chapter.video);
+            video.classList.add('hidden');
+            let videoGuerre = document.querySelector('.video');
+            imageChapter.src = (chapter.image);
+            cadreJeu.appendChild(imageChapter);
+            if (videoGuerre != undefined) {
+                cadreJeu.removeChild(videoGuerre);
+            }
         }
-        */
+        
 
         console.log(`${chapter.titre} \n ${chapter.description}`);
         
