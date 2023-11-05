@@ -188,10 +188,10 @@ button:active {
     }
 }
 
-/* Pour utilisateur qui utiliser dark mode :
+/* Pour utilisateur qui utiliser dark mode : 
 @media screen and (prefers-color-scheme: dark) {
     body {
-        filter: blur(0.5px) contrast(120%) saturate(0%);
+        filter: contrast(100%) saturate(5%);
     }
 }
 */
