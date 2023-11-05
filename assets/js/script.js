@@ -198,11 +198,9 @@ function goToChapter(chapterName) {
         chapterDescription.textContent = (chapter.description);
         
         const video = document.createElement('video');
-        cadreJeu.appendChild(video);
-        
 
         if (chapter.video != undefined) {
-            video.classList.remove('hidden');
+            cadreJeu.appendChild(video);
             video.src = chapter.video;
             video.autoplay = true;
             video.loop = true;
@@ -211,10 +209,10 @@ function goToChapter(chapterName) {
             cadreJeu.removeChild(imageChapter);
         }
         else {
-            video.classList.add('hidden');
-            let videoGuerre = document.querySelector('.video');
             imageChapter.src = (chapter.image);
             cadreJeu.appendChild(imageChapter);
+            
+            let videoGuerre = document.querySelector('.video');
             if (videoGuerre != undefined) {
                 cadreJeu.removeChild(videoGuerre);
             }
