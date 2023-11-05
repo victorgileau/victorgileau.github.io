@@ -64,10 +64,11 @@ p {
 
 .video {
     order: 1;
-    border-radius: 10%;
+    border-radius: 20px;
     min-width: 200px;
-    max-width: 600px;
-    height: 350px;
+    max-width: 900px;
+    min-height: 350px;
+    max-height: 450px;
     padding: 10px;
 }
 
@@ -134,6 +135,13 @@ button:active {
         max-width: 250px;
         min-height: 50px;
         max-height: 250px;
+    }
+    .video {
+        border-radius: 20px;
+        min-width: 50px;
+        max-width: 350px;
+        min-height: 50px;
+        max-height: 250px; 
     }
     button {
         flex-basis: 30%;
