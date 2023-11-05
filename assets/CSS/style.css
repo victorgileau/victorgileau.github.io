@@ -60,6 +60,7 @@ p {
     max-width: 400px;
     height: 350px;
     padding: 10px;
+    filter: blur(0.5px) contrast(120%) saturate(0%);
 }
 
 .video {
@@ -70,6 +71,7 @@ p {
     min-height: 350px;
     max-height: 450px;
     padding: 10px;
+    filter: blur(1px) contrast(350%) saturate(200%);
 }
 
 .hidden {
