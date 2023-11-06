@@ -129,7 +129,7 @@ const chapters = {
         titre: 'Sacrifier Nick',
         description: '\nVous proposer à vos coéquipiers en criant : On pourrait sacrifier Nick!!! \nMais la réaction est très négative de la part de votre équipe vous êtes tué pour vouloir tuer le farceur Nick.',
         image: './assets/images/deux_militaire-modifier.jpg',
-        audio: './assets/sons/transition.mp3',
+        audio: './assets/sons/walther-p38-firing-sound-effect.mp3',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
         ],
@@ -199,6 +199,7 @@ const chapters = {
     
 }
 
+const body = document.getElementsByTagName('body')[0];
 const cadreJeu = document.querySelector('#jeu');
 const imgLogo = document.querySelector('#logo');
 const title = document.querySelector('#titre');
@@ -260,7 +261,6 @@ function goToChapter(chapterName) {
                 cadreJeu.removeChild(audio);
             }
         }
-        
 
         console.log(`${chapter.titre} \n ${chapter.description}`);
         
