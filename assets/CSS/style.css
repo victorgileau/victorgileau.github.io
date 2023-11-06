@@ -38,6 +38,7 @@ body {
 }
 
 p {
+    text-shadow: 0 0 2px black;
     font-size: 1.2em;
     text-align: center;
 }
@@ -49,6 +50,10 @@ p {
 }
 
 #titre {
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px black;
+    letter-spacing: 5px;
     font-size: 30px;
     font-weight: bold;
 }
@@ -159,7 +164,7 @@ button:active {
         min-width: 350px;
     }
     #titre {
-        font-size: 25px;
+        font-size: 22px;
     }
     p {
         font-size: 1em;
@@ -187,14 +192,14 @@ button:active {
         max-height: 250px; 
     }
     button {
-        flex-basis: 35%;
+        flex-basis: 40%;
     }
     #logo {
         max-width: 40vw;
         min-width: 300px;
     }
     #titre {
-        font-size: 25px;
+        font-size: 20px;
     }
     p {
         font-size: 1em;

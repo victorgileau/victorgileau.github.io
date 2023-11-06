@@ -199,7 +199,6 @@ const chapters = {
     
 }
 
-const body = document.getElementsByTagName('body')[0];
 const cadreJeu = document.querySelector('#jeu');
 const imgLogo = document.querySelector('#logo');
 const title = document.querySelector('#titre');
@@ -216,6 +215,7 @@ function goToChapter(chapterName) {
         title.textContent = (chapter.titre);
         chapterDescription.textContent = (chapter.description);
         
+        //ajout de de video
         const video = document.createElement('video');
 
         if (chapter.video != undefined) {
@@ -237,6 +237,7 @@ function goToChapter(chapterName) {
             }
         }
 
+        //ajout de de son
         const audio = document.createElement('audio');
 
         if (chapter.audio != undefined) {
@@ -262,11 +263,8 @@ function goToChapter(chapterName) {
             }
         }
 
+        //écrit information sur le chapitre dans la console
         console.log(`${chapter.titre} \n ${chapter.description}`);
-        
-        while (containButton.firstChild) {
-            containButton.removeChild(containButton.firstChild);
-        }
 
         //isBombeDead devien true car il meurt dans l'histoire en passant par les tranchées, mais n'a pas fait échouer la mission
         if ([chapterName] == 'trancherChoixNiveauUn') {
@@ -312,6 +310,10 @@ function goToChapter(chapterName) {
             isBombeDead = false;
         }
 
+        while (containButton.firstChild) {
+            containButton.removeChild(containButton.firstChild);
+        }
+
         for (let i = 0; i < chapter.bouton.length; i++) {
             const boutonNouveau = document.createElement('button');
             boutonNouveau.textContent = chapter.bouton[i].titre;
@@ -321,6 +323,7 @@ function goToChapter(chapterName) {
 
             containButton.appendChild(boutonNouveau);
     
+            //écrit information sur le chapitre dans la console
             console.log(`${chapter.bouton[i].titre} \nClé : écrire goToChapter(${chapter.bouton[i].destination})`);
         }
     }
