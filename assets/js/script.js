@@ -87,7 +87,7 @@ const chapters = {
         titre: 'Utiliser un véhicule comme bouclier.',
         description: '\nLe véhicule est une bonne défense. Tous les membres de l\'escadron survivent. Mais le véhicule ne fonctionne plus.',
         image: './assets/images/vehicule_militaire-modifier.jpg',
-        audio: './assets/sons/transition.mp3',
+        audio: './assets/sons/car-engine-starting.mp3',
         bouton: [
             { titre: 'Continuer', destination: 'finNiveauUn' }
         ],
@@ -281,8 +281,7 @@ function goToChapter(chapterName) {
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'choixNonDisponible'
         //change le titre du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'Revenir dernier chapitre'
         //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'choixNiveauTroix'
-        //else :
-        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'bombeChoixNiveauTroix' (c'est l'option original qui dirige vers la bonne option)
+        //sinon change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'bombeChoixNiveauTroix' (c'est l'option original qui dirige vers la bonne option)
         if ([chapterName] == 'choixNiveauTroix') {
             if (isBombeDead == true) {
                 chapters.choixNiveauTroix.bouton[0].destination = 'choixNonDisponible';
@@ -294,15 +293,11 @@ function goToChapter(chapterName) {
             }
         }
 
-        //if (isBombeDead == true) :
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'choixNonDisponible'
-        //change le titre du premier bouton dans le tableau de l'objet(choixNonDisponible) pour 'Recommancer'
-        //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'intro'
-        //change isBombeDead a false pour reset la variable vu que le bouton dans l'objet(choixNonDisponible) retourne au début
-        //else :
-        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'bombeChoixNiveauQuatreFin' (c'est l'option original qui dirige vers la (bonne) fin)
-        //après :
-        //isBombeDead = false / reset la valeur a tous les recommencement du début avant de revenir au début
+        //change le titre du premier bouton dans le tableau de l'objet(choixNonDisponible) pour 'Recommancer' et change ca destination pour 'intro'
+        //change isBombeDead a false pour reset la variable
+        //sinon change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'bombeChoixNiveauQuatreFin' (c'est l'option original qui dirige vers la (bonne) fin)
+        //isBombeDead = false / reset la valeur à tous les recommencements
         if ([chapterName] == 'choixNiveauQuatre') {
             if (isBombeDead == true) {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'choixNonDisponible';
