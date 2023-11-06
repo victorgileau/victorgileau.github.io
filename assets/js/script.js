@@ -13,7 +13,7 @@ const chapters = {
         description: '\nVous devez décider si vous accepter la mission ou choisir une autre option?',
         image: './assets/images/commandant_militaire_homme-modifier.jpg',
         video: './assets/videos/WW2_Eastern_Front_Battle_Footage-480p.mp4',
-        audio: './assets/sons/military-battle-ww2-128556.mp3',
+        audio: './assets/sons/military-battle-ww2.mp3',
         bouton: [
             { titre: 'Fuir', destination: 'fuirChoixDepart' },
             { titre: 'Accepter', destination: 'accepterChoixDepart' },
