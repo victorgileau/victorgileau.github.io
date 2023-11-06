@@ -217,7 +217,7 @@ function goToChapter(chapterName) {
         
         //ajout de de video
         const video = document.createElement('video');
-
+        
         if (chapter.video != undefined) {
             cadreJeu.appendChild(video);
             video.src = chapter.video;
