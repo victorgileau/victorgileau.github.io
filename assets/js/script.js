@@ -34,7 +34,7 @@ const chapters = {
     refuserChoixDepart: {
         titre: 'Exécuté',
         description: '\nVous avez été exécuté pour avoir désobéi un ordre direct. C\'était une certitude.',
-        image: './assets/images/homme_militaire_tire-modifer.jpg',
+        image: './assets/images/commandant_militaire_homme-modifier.jpg',
         audio: './assets/sons/walther-p38-firing-sound-effect.mp3',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
@@ -217,7 +217,7 @@ function goToChapter(chapterName) {
         
         //ajout de de video
         const video = document.createElement('video');
-        
+
         if (chapter.video != undefined) {
             cadreJeu.appendChild(video);
             video.src = chapter.video;
