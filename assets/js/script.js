@@ -4,6 +4,7 @@ const chapters = {
         titre: 'Intro',
         description: '\nVous êtes un des soldats d\'un escadron de soldat ramené à la vie. \nEn plein milieu d\'une guerre contre l\'ennemi. \nLe soldat immortel a été capturé par l\'ennemi. \n \nVous avez ordre de le retrouver avec votre escadron : \nNick, Bombe, Alive et vous.',
         image: './assets/images/homme_militaire_de_dos-modifer.jpg',
+        audio: './assets/sons/transition.mp3',
         bouton: [
             { titre: 'Commencer', destination: 'choixDepart' }
         ],
@@ -56,7 +57,8 @@ const chapters = {
         titre: 'Le champ de bataille',
         description: '\nPlusieurs options s\'offre a vous pour traverser ce champ de bataille des plus dévastateurs, vous devez choisir un moyen de passer et vite.',
         image: './assets/images/homme_militaire_glise-desert-modifer.jpg',
-        audio: './assets/sons/transition.mp3',
+        video: './assets/videos/WW2_Eastern_Front_Battle_Footage-480p.mp4',
+        audio: './assets/sons/sound-effect-ww2-uk-air-raid-siren.mp3',
         bouton: [
             { titre: 'Foncer', destination: 'foncerChoixNiveauUn' },
             { titre: 'Utiliser un véhicule', destination: 'vehiculeChoixNiveauUn' },
@@ -225,6 +227,10 @@ function goToChapter(chapterName) {
             video.autoplay = true;
             video.loop = true;
             video.muted = true;
+            video.currentTime = 4;
+            if ([chapterName] == 'choixNiveauUn') {
+                video.currentTime = 25;
+            }
             video.setAttribute('class', 'video');
             cadreJeu.removeChild(imageChapter);
         }
@@ -254,7 +260,7 @@ function goToChapter(chapterName) {
             audio.play();
             setTimeout(() => {
                 audio.pause();
-            }, 3000);
+            }, 6000);
         }
         else {
             let audio = document.querySelector('.audio');
