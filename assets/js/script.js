@@ -1,3 +1,4 @@
+//je passe de niveau un à troix
 const chapters = {
     intro: {
         titre: 'Intro',
@@ -77,7 +78,7 @@ const chapters = {
         titre: 'Passer par les trancher',
         description: '\nVous perdez Bombe ayant reçu une balle perdue dans les tranches. Mais le reste de l\'escadron survie. Vous continuez sur votre lancer.',
         image: './assets/images/millitaire_homme_debout_redard-vers-camera-modifier.jpg',
-        audio: './assets/sons/transition.mp3',
+        audio: './assets/sons/rifle-shot-m1-garand.mp3',
         bouton: [
             { titre: 'Continuer', destination: 'finNiveauUn' }
         ],
@@ -119,7 +120,7 @@ const chapters = {
         titre: 'Sacrifier Bombe',
         description: '\nBombe qui comprend vos ordres à travers les tirs ennemis et courre sur le champ de bataille et puis... \n Bombe pose le pied sur une mine et dit \"merde\". Il meurt.',
         image: './assets/images/militaire_vissage_cacher_regard-de_cote-modifer.jpg',
-        audio: './assets/sons/transition.mp3',
+        audio: './assets/sons/small-explosion.mp3',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
         ],
@@ -251,9 +252,9 @@ function goToChapter(chapterName) {
             audio.src = chapter.audio;
             audio.volume = 0.15;
             audio.play();
-            if (audio.currentTime == 3) {
+            setTimeout(() => {
                 audio.pause();
-            }
+            }, 3000);
         }
         else {
             let audio = document.querySelector('.audio');
