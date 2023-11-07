@@ -194,7 +194,7 @@ const chapters = {
         titre: 'Indisponible - Bombe est Mort',
         description: '\nCe choix n\'est pas disponible.',
         image: './assets/images/homme_masque_ordre-modifier.jpg',
-        audio: './assets/sons/transition.mp3',
+        audio: './assets/sons/gta_restart.mp3',
         bouton: [
             { titre: 'Revenir dernier chapitre', destination: 'intro' }
         ],
