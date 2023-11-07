@@ -218,7 +218,7 @@ function goToChapter(chapterName) {
         title.textContent = (chapter.titre);
         chapterDescription.textContent = (chapter.description);
         
-        //ajout de de video
+        //ajout de video
         const video = document.createElement('video');
 
         if (chapter.video != undefined) {
@@ -244,7 +244,7 @@ function goToChapter(chapterName) {
             }
         }
 
-        //ajout de de son
+        //ajout de son
         const audio = document.createElement('audio');
 
         if (chapter.audio != undefined) {
