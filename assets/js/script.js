@@ -15,7 +15,8 @@ const chapters = {
         description: '\nVous devez décider si vous accepter la mission ou choisir une autre option?',
         image: './assets/images/commandant_militaire_homme-modifier.jpg',
         video: './assets/videos/WW2_Eastern_Front_Battle_Footage-480p.mp4',
-        audio: './assets/sons/military-battle-ww2.mp3',
+        audio: './assets/sons/transition.mp3',
+        audioAmbiant: './assets/sons/military-battle-ww2.mp3',
         bouton: [
             { titre: 'Fuir', destination: 'fuirChoixDepart' },
             { titre: 'Accepter', destination: 'accepterChoixDepart' },
@@ -58,7 +59,8 @@ const chapters = {
         description: '\nPlusieurs options s\'offre a vous pour traverser ce champ de bataille des plus dévastateurs, vous devez choisir un moyen de passer et vite.',
         image: './assets/images/homme_militaire_glise-desert-modifer.jpg',
         video: './assets/videos/WW2_Eastern_Front_Battle_Footage-480p.mp4',
-        audio: './assets/sons/sound-effect-ww2-uk-air-raid-siren.mp3',
+        audio: './assets/sons/transition.mp3',
+        audioAmbiant: './assets/sons/sound-effect-ww2-uk-air-raid-siren.mp3',
         bouton: [
             { titre: 'Foncer', destination: 'foncerChoixNiveauUn' },
             { titre: 'Utiliser un véhicule', destination: 'vehiculeChoixNiveauUn' },
@@ -90,7 +92,8 @@ const chapters = {
         titre: 'Utiliser un véhicule comme bouclier.',
         description: '\nLe véhicule est une bonne défense. Tous les membres de l\'escadron survivent. Mais le véhicule ne fonctionne plus.',
         image: './assets/images/vehicule_militaire-modifier.jpg',
-        audio: './assets/sons/car-engine-starting.mp3',
+        audio: './assets/sons/transition.mp3',
+        audioAmbiant: './assets/sons/car-engine-starting.mp3',
         bouton: [
             { titre: 'Continuer', destination: 'finNiveauUn' }
         ],
@@ -260,10 +263,36 @@ function goToChapter(chapterName) {
             audio.play();
             setTimeout(() => {
                 audio.pause();
-            }, 6000);
+            }, 3000);
         }
         else {
             let audio = document.querySelector('.audio');
+            if (audio != undefined) {
+                audio.pause();
+                cadreJeu.removeChild(audio);
+            }
+        }
+
+        //ajout son ambiant
+        const audioAmbiant = document.createElement('audio');
+
+        if (chapter.audioAmbiant != undefined) {
+            let sonAvant = document.querySelector('.audioAmbiant');
+            if (sonAvant != undefined) {
+                cadreJeu.removeChild(sonAvant);
+            }
+
+            cadreJeu.appendChild(audioAmbiant);
+            audioAmbiant.classList.add('audioAmbiant');
+            audioAmbiant.src = chapter.audioAmbiant;
+            audioAmbiant.volume = 0.3;
+            audioAmbiant.play();
+            setTimeout(() => {
+                audioAmbiant.pause();
+            }, 9000);
+        }
+        else {
+            let audio = document.querySelector('.audioAmbiant');
             if (audio != undefined) {
                 audio.pause();
                 cadreJeu.removeChild(audio);
