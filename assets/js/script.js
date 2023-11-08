@@ -238,13 +238,13 @@ function goToChapter(chapterName) {
             cadreJeu.removeChild(imageChapter);
         }
         else {
-            imageChapter.src = (chapter.image);
-            cadreJeu.appendChild(imageChapter);
-            
             let videoGuerre = document.querySelector('.video');
             if (videoGuerre != undefined) {
                 cadreJeu.removeChild(videoGuerre);
             }
+
+            imageChapter.src = (chapter.image);
+            cadreJeu.appendChild(imageChapter);
         }
 
         //ajout de son
