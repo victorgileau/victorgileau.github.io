@@ -232,7 +232,7 @@ function goToChapter(chapterName) {
             video.muted = true;
             video.currentTime = 4;
             if ([chapterName] == 'choixNiveauUn') {
-                video.currentTime = 25;
+                video.currentTime = 42;
             }
             video.setAttribute('class', 'video');
             cadreJeu.removeChild(imageChapter);
@@ -286,10 +286,11 @@ function goToChapter(chapterName) {
             audioAmbiant.classList.add('audioAmbiant');
             audioAmbiant.src = chapter.audioAmbiant;
             audioAmbiant.volume = 0.3;
+            audioAmbiant.loop = true;
             audioAmbiant.play();
-            setTimeout(() => {
-                audioAmbiant.pause();
-            }, 9000);
+            if ([chapterName] == 'vehiculeChoixNiveauUn') {
+                audioAmbiant.loop = false;
+            }
         }
         else {
             let audio = document.querySelector('.audioAmbiant');
