@@ -99,6 +99,7 @@ button {
     color: #e0baba;
     box-shadow: 5px 5px 10px #000000;
     border: 1px solid #000000;
+    transition: box-shadow 0.2s linear, background-color 0.2s linear;
 }
 
 button:hover {
