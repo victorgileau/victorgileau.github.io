@@ -214,6 +214,14 @@ const videoChapter = document.querySelector('.video');
 const containButton = document.querySelector('.boutons');
 let isBombeDead = false;
 
+//ajout sons ambiance constant
+const audioAmbiantGeneral = document.createElement('audio');
+cadreJeu.appendChild(audioAmbiantGeneral);
+audioAmbiantGeneral.src = './assets/sons/World_War_2_Battle_Ambience.mp3';
+audioAmbiantGeneral.autoplay = true;
+audioAmbiantGeneral.loop = true;
+audioAmbiantGeneral.volume = 1;
+
 function goToChapter(chapterName) {
     const chapter = chapters[chapterName];
 
@@ -299,6 +307,14 @@ function goToChapter(chapterName) {
                 cadreJeu.removeChild(audio);
             }
         }
+
+        //ajout son ambiant constant
+        if ([chapterName] == 'choixNiveauUn' || [chapterName] == 'choixDepart') {
+            audioAmbiantGeneral.pause();
+        } else {
+            audioAmbiantGeneral.play();
+        }
+        
 
         //écrit information sur le chapitre dans la console
         console.log(`${chapter.titre} \n ${chapter.description}`);
