@@ -220,7 +220,8 @@ cadreJeu.appendChild(audioAmbiantGeneral);
 audioAmbiantGeneral.src = './assets/sons/World_War_2_Battle_Ambience.mp3';
 audioAmbiantGeneral.autoplay = true;
 audioAmbiantGeneral.loop = true;
-audioAmbiantGeneral.volume = 1;
+audioAmbiantGeneral.volume = 0.6;
+audioAmbiantGeneral.currentTime = 50;
 
 function goToChapter(chapterName) {
     const chapter = chapters[chapterName];
@@ -322,11 +323,13 @@ function goToChapter(chapterName) {
         //isBombeDead devien true car il meurt dans l'histoire en passant par les tranchées, mais n'a pas fait échouer la mission
         if ([chapterName] == 'trancherChoixNiveauUn') {
             isBombeDead = true;
+            localStorage.setItem('mortBombe', 'true');
         }
 
         //isBombeDead devien false car il ne meurt pas donc doit rester une option possible
         if ([chapterName] == 'vehiculeChoixNiveauUn') {
             isBombeDead = false;
+            localStorage.setItem('mortBombe', 'false');
         }
 
         //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'choixNonDisponible'
@@ -355,13 +358,22 @@ function goToChapter(chapterName) {
                 chapters.choixNonDisponible.bouton[0].titre = 'Recommancer';
                 chapters.choixNonDisponible.bouton[0].destination = 'intro';
                 isBombeDead = false;
+                localStorage.setItem('mortBombe', 'false');
             }
             else {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'bombeChoixNiveauQuatreFin';
                 isBombeDead = false;
+                localStorage.setItem('mortBombe', 'false');
             }
             isBombeDead = false;
+            localStorage.setItem('mortBombe', 'false');
         }
+
+        //local storage :
+        localStorage.setItem('chapter', [chapterName]);
+        console.log(localStorage);
+        console.log(`Chapitre enregistrer : ${localStorage.chapter}`); //test
+        console.log(`Bombe est mort ? ${localStorage.mortBombe}`);
 
         while (containButton.firstChild) {
             containButton.removeChild(containButton.firstChild);
@@ -387,4 +399,15 @@ function goToChapter(chapterName) {
 
 }
 
-goToChapter('intro');
+if (localStorage.getItem('chapter') != null) {
+    let mortBombe = localStorage.getItem('mortBombe');
+    console.log(mortBombe);
+    if (mortBombe == true) {
+        isBombeDead = true;
+    } else {
+        isBombeDead = false;
+    }
+    goToChapter(localStorage.getItem('chapter'));
+} else {
+    goToChapter('intro');
+}
