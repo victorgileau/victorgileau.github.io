@@ -178,6 +178,7 @@ const chapters = {
         description: '\nNick crie qui va les sauver : Je vais tout vous sauver!!! \nNick enlève la goupille d\'une grenade, mais une blessure à son bras fait en sorte qu\'il l\'échappe, ce qui tue tout votre escadron. \nIl ne vous à pas sauvé du tout.',
         image: './assets/images/explosion_carre-modifier.jpg',
         audio: './assets/sons/explosion.mp3',
+        video: './assets/videos/Big_Explosion.mp4',
         bouton: [
             { titre: 'Recommencer', destination: 'intro' }
         ],
@@ -212,6 +213,7 @@ const chapterDescription = document.querySelector('p');
 const imageChapter = document.querySelector('.image');
 const videoChapter = document.querySelector('.video');
 const containButton = document.querySelector('.boutons');
+const btnReset = document.querySelector('#reset');
 let isBombeDead = false;
 
 //ajout sons ambiance constant
@@ -221,7 +223,7 @@ audioAmbiantGeneral.src = './assets/sons/World_War_2_Battle_Ambience.mp3';
 audioAmbiantGeneral.autoplay = true;
 audioAmbiantGeneral.loop = true;
 audioAmbiantGeneral.volume = 0.6;
-audioAmbiantGeneral.currentTime = 50;
+audioAmbiantGeneral.currentTime = 300;
 
 function goToChapter(chapterName) {
     const chapter = chapters[chapterName];
@@ -245,6 +247,14 @@ function goToChapter(chapterName) {
             }
             video.setAttribute('class', 'video');
             cadreJeu.removeChild(imageChapter);
+            if ([chapterName] == 'nickChoixNiveauQuatre') {
+                video.style.filter = 'saturate(10%)';
+                setTimeout(() => {
+                    cadreJeu.removeChild(video);
+                    imageChapter.src = (chapter.image);
+                    cadreJeu.appendChild(imageChapter);
+                }, 3000);
+            }
         }
         else {
             let videoGuerre = document.querySelector('.video');
@@ -402,7 +412,7 @@ function goToChapter(chapterName) {
 if (localStorage.getItem('chapter') != null) {
     let mortBombe = localStorage.getItem('mortBombe');
     console.log(mortBombe);
-    if (mortBombe == true) {
+    if (mortBombe === 'true') {
         isBombeDead = true;
     } else {
         isBombeDead = false;
@@ -411,3 +421,10 @@ if (localStorage.getItem('chapter') != null) {
 } else {
     goToChapter('intro');
 }
+
+btnReset.addEventListener('click', () => {
+    localStorage.clear();
+    console.log('Recommancer localStorage: ');
+    console.log(localStorage);
+    goToChapter('intro');
+});
