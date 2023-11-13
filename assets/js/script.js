@@ -357,7 +357,7 @@ function goToChapter(chapterName) {
             }
         }
 
-        //change la destination du choix de niveau Quatre si Bombe est mort, change aussi les options du chapitre 'choixNonDisponible' sinon ne le change pas. Reset la twist
+        //change la destination du choix de niveau Quatre si Bombe est mort, change aussi les options du chapitre 'choixNonDisponible' sinon ne le change pas.
         if ([chapterName] == 'choixNiveauQuatre') {
             if (isBombeDead == true) {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'choixNonDisponible';
