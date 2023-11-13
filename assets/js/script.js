@@ -279,6 +279,9 @@ function goToChapter(chapterName) {
             audio.classList.add('audio');
             audio.src = chapter.audio;
             audio.volume = 0.15;
+            if ([chapterName] == 'choixNonDisponible') {
+                audio.volume = 0.8;
+            }
             audio.play();
             setTimeout(() => {
                 audio.pause();
@@ -383,7 +386,7 @@ function goToChapter(chapterName) {
         localStorage.setItem('chapter', [chapterName]);
         console.log(localStorage);
         console.log(`Chapitre enregistrer : ${localStorage.chapter}`); //test
-        console.log(`Bombe est mort ? ${localStorage.mortBombe}`);
+        console.log(`Est-ce que Bombe est mort ? ${localStorage.mortBombe}`);
 
         while (containButton.firstChild) {
             containButton.removeChild(containButton.firstChild);
@@ -406,7 +409,6 @@ function goToChapter(chapterName) {
     else {
         console.log('Mauvaise clé.');
     }
-
 }
 
 if (localStorage.getItem('chapter') != null) {
