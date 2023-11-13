@@ -222,7 +222,7 @@ cadreJeu.appendChild(audioAmbiantGeneral);
 audioAmbiantGeneral.src = './assets/sons/World_War_2_Battle_Ambience.mp3';
 audioAmbiantGeneral.autoplay = true;
 audioAmbiantGeneral.loop = true;
-audioAmbiantGeneral.volume = 0.6;
+audioAmbiantGeneral.volume = 0.4;
 audioAmbiantGeneral.currentTime = 300;
 
 function goToChapter(chapterName) {
