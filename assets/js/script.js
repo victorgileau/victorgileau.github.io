@@ -363,13 +363,9 @@ function goToChapter(chapterName) {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'choixNonDisponible';
                 chapters.choixNonDisponible.bouton[0].titre = 'Recommancer';
                 chapters.choixNonDisponible.bouton[0].destination = 'intro';
-                isBombeDead = false;
-                localStorage.setItem('mortBombe', 'false');
             }
             else {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'bombeChoixNiveauQuatreFin';
-                isBombeDead = false;
-                localStorage.setItem('mortBombe', 'false');
             }
         }
 
