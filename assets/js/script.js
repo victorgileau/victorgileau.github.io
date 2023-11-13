@@ -336,19 +336,16 @@ function goToChapter(chapterName) {
         //isBombeDead devien true car il meurt dans l'histoire en passant par les tranchées, mais n'a pas fait échouer la mission
         if ([chapterName] == 'trancherChoixNiveauUn') {
             isBombeDead = true;
-            localStorage.setItem('mortBombe', 'true');
+            localStorage.setItem('mortBombe', 'true'); //set le local strogage a true vu que bombe est mort
         }
 
         //isBombeDead devien false car il ne meurt pas donc doit rester une option possible
         if ([chapterName] == 'vehiculeChoixNiveauUn') {
             isBombeDead = false;
-            localStorage.setItem('mortBombe', 'false');
+            localStorage.setItem('mortBombe', 'false'); //set le local strogage a true vu que bombe n'est pas mort
         }
 
-        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'choixNonDisponible'
-        //change le titre du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'Revenir dernier chapitre'
-        //change la destination du premier bouton dans le tableau dans l'objet(choixNonDisponible) pour 'choixNiveauTroix'
-        //sinon change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauTroix) pour 'bombeChoixNiveauTroix' (c'est l'option original qui dirige vers la bonne option)
+        //change la destination du choix de niveau troix si Bombe est mort et les options du chapitre 'choixNonDisponible' sinon ne le change pas 
         if ([chapterName] == 'choixNiveauTroix') {
             if (isBombeDead == true) {
                 chapters.choixNiveauTroix.bouton[0].destination = 'choixNonDisponible';
@@ -360,11 +357,7 @@ function goToChapter(chapterName) {
             }
         }
 
-        //change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'choixNonDisponible'
-        //change le titre du premier bouton dans le tableau de l'objet(choixNonDisponible) pour 'Recommancer' et change ca destination pour 'intro'
-        //change isBombeDead a false pour reset la variable
-        //sinon change la destination du premier bouton (c'est l'option de Bombe) dans le tableau dans l'objet(choixNiveauQuatre) pour 'bombeChoixNiveauQuatreFin' (c'est l'option original qui dirige vers la (bonne) fin)
-        //isBombeDead = false / reset la valeur à tous les recommencements
+        //change la destination du choix de niveau Quatre si Bombe est mort, change aussi les options du chapitre 'choixNonDisponible' sinon ne le change pas. Reset la twist
         if ([chapterName] == 'choixNiveauQuatre') {
             if (isBombeDead == true) {
                 chapters.choixNiveauQuatre.bouton[0].destination = 'choixNonDisponible';
@@ -378,8 +371,6 @@ function goToChapter(chapterName) {
                 isBombeDead = false;
                 localStorage.setItem('mortBombe', 'false');
             }
-            isBombeDead = false;
-            localStorage.setItem('mortBombe', 'false');
         }
 
         //local storage :
