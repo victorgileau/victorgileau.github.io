@@ -149,7 +149,72 @@ button:focus {
 
 button:active {
     box-shadow: inset 0px 0px 10px #000000;     
-}       
+}
+
+/*Ajout NEW */
+.gameChoix {
+    min-width: 50vw;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.character {
+    text-shadow: 0 0 2px black;
+    font-size: 1.2em;
+    text-align: center;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    opacity: 0.5;
+    width: 180px;
+    height: 180px;
+    image-rendering: pixelated;
+    background-repeat: repeat-x;
+    background-size: auto 180px;
+    background-color: #bf0606;
+    border-radius: 25px;
+    border: solid 1px #e0baba;
+    transition: padding 0.3s linear;
+}
+
+.character:hover {
+    text-shadow: 0 0 5px black;
+    opacity: 1;
+    border: dashed 5px #e0baba;
+    padding: 2px;
+}
+
+.character:active {
+    font-size: 1.8em;
+    border: dashed 8px #e0baba;
+    padding: 15px;
+    width: 190px;
+    height: 190px;
+}
+
+.character.choix {
+    font-size: 1.8em;
+}
+
+.character.no1 {
+    animation-name: animation3frame180px;
+}
+
+.character.no2, .character.no3 {
+    animation-name: animation4frame180px;
+}
+
+@keyframes animation3frame180px {
+    from { background-position: 0 0;}
+    to { background-position: -540px 0;}
+}
+
+@keyframes animation4frame180px {
+    from { background-position: 0 0;}
+    to { background-position: -720px 0;}
+}
+/*Fin Ajout NEW */
 
 @media screen and (max-width: 850px) {
     .video {
@@ -213,6 +278,62 @@ button:active {
     #reset:active {
         font-size: 22px;
     }
+    /*Ajout NEW*/
+    .gameChoix {
+        width: 280px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .character {
+        opacity: 0.5;
+        width: 120px;
+        height: 120px;
+        image-rendering: pixelated;
+        background-repeat: repeat-x;
+        background-size: auto 120px;
+        background-color: #bf0606;
+        border-radius: 25px;
+        border: solid 1px #e0baba;
+    }
+    .character:hover {
+        font-size: 1em;
+        opacity: 1;
+        border: dashed 5px #e0baba;
+        padding: 2px;
+    }
+    
+    .character:active {
+        border: dashed 8px #e0baba;
+        padding: 2px;
+        width: 130px;
+        height: 130px;
+    }
+
+    .character.choix {
+        font-size: 1.3em;
+    }
+
+    .character.no1 {
+        animation-name: animation3frame120px;
+    }
+    
+    .character.no2, .character.no3 {
+        animation-name: animation4frame120px;
+    }
+
+    @keyframes animation3frame120px {
+        from { background-position: 0 0;}
+        to { background-position: -360px 0;}
+    }
+    
+    @keyframes animation4frame120px {
+        from { background-position: 0 0;}
+        to { background-position: -480px 0;}
+    }
+    /*Fin Ajout NEW*/
 }
 
 @media screen and (max-width: 415px) {
@@ -262,6 +383,49 @@ button:active {
     #reset:active {
         font-size: 18px;
     }
+    /*Ajout NEW*/
+    .gameChoix {
+        height: 350px;
+    }
+
+    .character {
+        font-size: 0.8em;
+        width: 100px;
+        height: 100px;
+        background-size: auto 100px;
+    }
+
+    .character:hover {
+        font-size: 0.9em;
+    }
+
+    .character:active {
+        width: 110px;
+        height: 110px;
+    }
+
+    .character.no1 {
+        animation-name: animation3frame100px;
+    }
+    
+    .character.no2, .character.no3 {
+        animation-name: animation4frame100px;
+    }
+
+    .character.choix {
+        font-size: 1em;
+    }
+
+    @keyframes animation3frame100px {
+        from { background-position: 0 0;}
+        to { background-position: -300px 0;}
+    }
+    
+    @keyframes animation4frame100px {
+        from { background-position: 0 0;}
+        to { background-position: -400px 0;}
+    }
+    /*Fin Ajout NEW*/
 }
 
 /* Pour utilisateur qui utiliser dark mode : 

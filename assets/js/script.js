@@ -1,5 +1,15 @@
 //je passe de niveau un à troix
 const chapters = {
+    //ajout *NEW*
+    choixPersonnage: {
+        titre: 'Choix de personnage',
+        description: 'none',
+        bouton: [
+            { titre: 'Choix fait', destination: 'intro'}
+        ],
+    },
+    //fin ajout *NEW*
+
     intro: {
         titre: 'Intro',
         description: '\nVous êtes un des soldats d\'un escadron de soldat ramené à la vie. \nEn plein milieu d\'une guerre contre l\'ennemi. \nLe soldat immortel a été capturé par l\'ennemi. \n \nVous avez ordre de le retrouver avec votre escadron : \nNick, Bombe, Alive et vous.',
@@ -190,7 +200,7 @@ const chapters = {
         image: './assets/images/hommex2_miltaire_fumee-modifer.jpg',
         audio: './assets/sons/succes.mp3',
         bouton: [
-            { titre: 'Succès - Recommencer', destination: 'intro' }
+            { titre: 'Succès - Recommencer', destination: 'choixPersonnage' }
         ],
     },
 
@@ -205,6 +215,26 @@ const chapters = {
     },
     
 }
+
+//ajout new
+const animationPixel = {
+    perso1: {
+        nom: 'Crane Blanc',
+        frame: 3,
+        source: './assets/animation_pixel/Perso1_01_idle/character_1_sckull_idle-spritsheet.png'
+    },
+    perso2: {
+        nom: 'Chapeau Noir',
+        frame: 4,
+        source: './assets/animation_pixel/Perso2_01_idle/charachter_2_idle_spritsheet.png'
+    },
+    perso3: {
+        nom: 'Rire gris',
+        frame: 4,
+        source: './assets/animation_pixel/Perso3_01_idle/charachter_3_idle_spriteSheet.png'
+    },
+}
+//ajout new fin
 
 const cadreJeu = document.querySelector('#jeu');
 const imgLogo = document.querySelector('#logo');
@@ -231,6 +261,22 @@ function goToChapter(chapterName) {
     if (chapter !== undefined) {
         title.textContent = (chapter.titre);
         chapterDescription.textContent = (chapter.description);
+
+        //Ajout *NEW*
+        //Ajout soldat
+        let soldat = localStorage.getItem('soldat');
+
+        if (localStorage.getItem('soldat') != null) {
+            let soldatOld = document.querySelector('.soldat');
+            if (soldatOld != null) {
+                cadreJeu.removeChild(soldatOld);
+            }
+            const infoSoldat = document.createElement('p');
+            infoSoldat.setAttribute('class', 'soldat');
+            cadreJeu.appendChild(infoSoldat);
+            infoSoldat.innerHTML = `Soldat choisie pour menner la mission :<br> <em>${soldat}</em>`;
+        }
+        //Fin Ajout *NEW*
         
         //ajout de video
         const video = document.createElement('video');
@@ -262,9 +308,88 @@ function goToChapter(chapterName) {
                 cadreJeu.removeChild(videoGuerre);
             }
 
-            imageChapter.src = (chapter.image);
-            cadreJeu.appendChild(imageChapter);
+            //ajout *NEW*
+            if (chapter.image != undefined) {
+                imageChapter.src = (chapter.image);
+                cadreJeu.appendChild(imageChapter);
+            }
+            //fin ajout *NEW*
         }
+
+        //Ajout *NEW*
+        //Ajout Choix personnage
+        const optionConteneur = document.createElement('div');
+        const option1 = document.createElement('div');
+        const option2 = document.createElement('div');
+        const option3 = document.createElement('div');
+
+        if ([chapterName] == 'choixPersonnage') {
+            let soldatOld = document.querySelector('.soldat');
+            if (soldatOld != null) {
+                cadreJeu.removeChild(soldatOld);
+            }
+
+            let img = document.querySelector('.image');
+            if (img != undefined) {
+                cadreJeu.removeChild(img);
+            }
+
+            chapterDescription.style.display = 'none';
+            optionConteneur.classList.add('gameChoix');
+            option1.classList.add('character', 'no1');
+            option2.classList.add('character', 'no2');
+            option3.classList.add('character', 'no3');
+            
+            optionConteneur.appendChild(option1);
+            optionConteneur.appendChild(option2);
+            optionConteneur.appendChild(option3);
+            cadreJeu.appendChild(optionConteneur);
+            option1.style.backgroundImage = `url('${animationPixel.perso1.source}')`;
+            option2.style.backgroundImage = `url('${animationPixel.perso2.source}')`;
+            option3.style.backgroundImage = `url('${animationPixel.perso3.source}')`;
+            option1.style.animationTimingFunction = `steps(${animationPixel.perso1.frame})`;
+            option2.style.animationTimingFunction = `steps(${animationPixel.perso2.frame})`;
+            option3.style.animationTimingFunction = `steps(${animationPixel.perso3.frame})`;
+            
+            const characters = document.querySelectorAll('.character');
+
+            characters.forEach((el) => {
+                el.addEventListener('click', choix);
+            });
+
+            //Ajout *NEW*
+            //Fonction pour le choix de personnage
+            function choix() {
+                option1.textContent = animationPixel.perso1.nom;
+                option2.textContent = animationPixel.perso2.nom;
+                option3.textContent = animationPixel.perso3.nom;
+                characters.forEach((el) => {
+                    el.style.backgroundColor = '#bf0606';
+                    el.style.opacity = 0.5;
+                    el.style.animationPlayState = 'paused';
+                    el.classList.remove('choix');
+                });
+
+                this.style.backgroundColor = '#bf0606';
+                this.style.animationDuration = '0.8s';
+                this.classList.add('choix');
+                this.style.animationPlayState = 'running';
+                this.style.opacity = 1;
+                localStorage.setItem('soldat', this.textContent);
+                console.log(localStorage);
+                const btn = document.querySelector('button');
+                btn.style.display = 'inline';
+            }
+            //Fin Ajout *NEW*
+        }
+        else {
+            let optionConteneurOld = document.querySelector('.gameChoix');
+            if (optionConteneurOld != undefined) {
+                cadreJeu.removeChild(optionConteneurOld);
+            }
+            chapterDescription.style.display = 'inline-block';
+        }
+        //Fin Ajout *NEW*
 
         //ajout de son
         const audio = document.createElement('audio');
@@ -390,6 +515,13 @@ function goToChapter(chapterName) {
     
             //écrit information sur le chapitre dans la console
             console.log(`${chapter.bouton[i].titre} \nClé : écrire goToChapter(${chapter.bouton[i].destination})`);
+
+            //Ajout *NEW*
+            if ([chapterName] == 'choixPersonnage') {
+                const btn = document.querySelector('button');
+                btn.style.display = 'none';
+            }
+            //Fin Ajout *NEW*
         }
     }
 
@@ -408,12 +540,12 @@ if (localStorage.getItem('chapter') != null) {
     }
     goToChapter(localStorage.getItem('chapter'));
 } else {
-    goToChapter('intro');
+    goToChapter('choixPersonnage');
 }
 
 btnReset.addEventListener('click', () => {
     localStorage.clear();
     console.log('Recommancer localStorage: ');
     console.log(localStorage);
-    goToChapter('intro');
+    goToChapter('choixPersonnage');
 });
