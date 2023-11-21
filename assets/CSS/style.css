@@ -77,6 +77,15 @@ p {
     text-align: center;
 }
 
+em {
+    font-style: normal;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #c44f4f;
+    text-shadow: 0 0 5px black;
+}
+
 #logo {
     order: 0;
     font-size: 45px;
@@ -167,11 +176,11 @@ button:active {
     animation-iteration-count: infinite;
     animation-play-state: paused;
     opacity: 0.5;
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     image-rendering: pixelated;
     background-repeat: repeat-x;
-    background-size: auto 180px;
+    background-size: auto 200px;
     background-color: #bf0606;
     border-radius: 25px;
     border: solid 1px #e0baba;
@@ -189,8 +198,8 @@ button:active {
     font-size: 1.8em;
     border: dashed 8px #e0baba;
     padding: 15px;
-    width: 190px;
-    height: 190px;
+    width: 210px;
+    height: 210px;
 }
 
 .character.choix {
@@ -207,12 +216,12 @@ button:active {
 
 @keyframes animation3frame180px {
     from { background-position: 0 0;}
-    to { background-position: -540px 0;}
+    to { background-position: -600px 0;}
 }
 
 @keyframes animation4frame180px {
     from { background-position: 0 0;}
-    to { background-position: -720px 0;}
+    to { background-position: -800px 0;}
 }
 /*Fin Ajout NEW */
 
