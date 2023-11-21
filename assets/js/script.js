@@ -334,6 +334,11 @@ function goToChapter(chapterName) {
                 cadreJeu.removeChild(img);
             }
 
+            let contneur = document.querySelector('.gameChoix');
+            if (contneur != undefined) {
+                cadreJeu.removeChild(contneur);
+            }
+
             chapterDescription.style.display = 'none';
             optionConteneur.classList.add('gameChoix');
             option1.classList.add('character', 'no1');
