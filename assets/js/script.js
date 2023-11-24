@@ -219,17 +219,17 @@ const chapters = {
 //ajout new
 const animationPixel = {
     perso1: {
-        nom: 'Crane Blanc',
+        nom: 'Jonny',
         frame: 3,
         source: './assets/animation_pixel/Perso1_01_idle/character_1_sckull_idle-spritsheet.png'
     },
     perso2: {
-        nom: 'Chapeau Noir',
+        nom: 'Edgar',
         frame: 4,
         source: './assets/animation_pixel/Perso2_01_idle/charachter_2_idle_spritsheet.png'
     },
     perso3: {
-        nom: 'Rire gris',
+        nom: 'Marcel',
         frame: 4,
         source: './assets/animation_pixel/Perso3_01_idle/charachter_3_idle_spriteSheet.png'
     },
