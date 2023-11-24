@@ -187,6 +187,7 @@ button:active {
 }
 
 .character:hover {
+    box-shadow: 0 0 10px #e0baba;
     text-shadow: 0 0 5px black;
     opacity: 1;
     border: dashed 5px #e0baba;
