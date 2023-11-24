@@ -274,7 +274,7 @@ function goToChapter(chapterName) {
             const infoSoldat = document.createElement('p');
             infoSoldat.setAttribute('class', 'soldat');
             cadreJeu.appendChild(infoSoldat);
-            infoSoldat.innerHTML = `Soldat choisie pour menner la mission :<br> <em>${soldat}</em>`;
+            infoSoldat.innerHTML = `Soldat choisie pour menner la mission:<br><em>${soldat}</em>`;
         }
         //Fin Ajout *NEW*
         
