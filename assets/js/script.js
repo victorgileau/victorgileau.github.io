@@ -4,6 +4,7 @@ const chapters = {
     choixPersonnage: {
         titre: 'Choix de personnage',
         description: 'none',
+        audio: './assets/sons/transition.mp3',
         bouton: [
             { titre: 'Choix fait', destination: 'intro'}
         ],

@@ -161,7 +161,7 @@ button:active {
 
 /*Ajout NEW */
 .gameChoix {
-    min-width: 50vw;
+    min-width: 35vw;
     height: 350px;
     display: flex;
     flex-direction: row;
