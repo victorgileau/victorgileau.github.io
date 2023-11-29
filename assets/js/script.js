@@ -246,6 +246,13 @@ const containButton = document.querySelector('.boutons');
 const btnReset = document.querySelector('#reset');
 let isBombeDead = false;
 
+//changmement style div avec animation Pixel
+function personaliserDivPersoPixel(animationPixelSource, animationPixelFrame, conteneur, num) {
+    const child = conteneur.children;
+    child[num].style.backgroundImage = animationPixelSource;
+    child[num].style.animationTimingFunction = animationPixelFrame;
+}
+
 //ajout sons ambiance constant
 const audioAmbiantGeneral = document.createElement('audio');
 cadreJeu.appendChild(audioAmbiantGeneral);
@@ -349,12 +356,9 @@ function goToChapter(chapterName) {
             optionConteneur.appendChild(option2);
             optionConteneur.appendChild(option3);
             cadreJeu.appendChild(optionConteneur);
-            option1.style.backgroundImage = `url('${animationPixel.perso1.source}')`;
-            option2.style.backgroundImage = `url('${animationPixel.perso2.source}')`;
-            option3.style.backgroundImage = `url('${animationPixel.perso3.source}')`;
-            option1.style.animationTimingFunction = `steps(${animationPixel.perso1.frame})`;
-            option2.style.animationTimingFunction = `steps(${animationPixel.perso2.frame})`;
-            option3.style.animationTimingFunction = `steps(${animationPixel.perso3.frame})`;
+            personaliserDivPersoPixel(`url('${animationPixel.perso1.source}')`, `steps(${animationPixel.perso1.frame})`, optionConteneur, 0);
+            personaliserDivPersoPixel(`url('${animationPixel.perso2.source}')`, `steps(${animationPixel.perso2.frame})`, optionConteneur, 1);
+            personaliserDivPersoPixel(`url('${animationPixel.perso3.source}')`, `steps(${animationPixel.perso3.frame})`, optionConteneur, 2);
             
             const characters = document.querySelectorAll('.character');
 
