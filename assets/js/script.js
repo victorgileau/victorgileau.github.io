@@ -4,7 +4,7 @@ const chapters = {
     choixPersonnage: {
         titre: 'Choix de personnage',
         description: 'none',
-        audio: './assets/sons/transition.mp3',
+        audio: './assets/sons/gta_restart.mp3',
         bouton: [
             { titre: 'Choix fait', destination: 'intro'}
         ],
@@ -414,7 +414,7 @@ function goToChapter(chapterName) {
             audio.classList.add('audio');
             audio.src = chapter.audio;
             audio.volume = 0.15;
-            if ([chapterName] == 'choixNonDisponible') {
+            if (audio.src == './assets/sons/gta_restart.mp3') {
                 audio.volume = 0.8;
             }
             audio.play();
