@@ -414,8 +414,8 @@ function goToChapter(chapterName) {
             audio.classList.add('audio');
             audio.src = chapter.audio;
             audio.volume = 0.15;
-            if (audio.src == './assets/sons/gta_restart.mp3') {
-                audio.volume = 0.8;
+            if (audio.src === './assets/sons/gta_restart.mp3') {
+                audio.volume = 1;
             }
             audio.play();
             setTimeout(() => {
