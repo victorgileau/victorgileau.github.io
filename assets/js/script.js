@@ -579,12 +579,6 @@ muteSound.addEventListener('change', () => {
     }
 });
 
-
-
-if (isSonMute === true) {
-    
-}
-
 if (localStorage.getItem('chapter') != null) {
     let mortBombe = localStorage.getItem('mortBombe');
     console.log(mortBombe);
