@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: "Delivery";
     src: url("../font/WrongDelivery.ttf") format("truetype");
@@ -68,6 +67,12 @@ body {
     background-color: #c44f4f;
     box-shadow: inset 0 0 10px black;
     border: solid 1px #e0baba;
+}
+
+.muteSound {
+    align-self: flex-end;
+    padding: 5px;
+    order: 4;
 }
 
 p {

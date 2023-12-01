@@ -245,6 +245,7 @@ const imageChapter = document.querySelector('.image');
 const videoChapter = document.querySelector('.video');
 const containButton = document.querySelector('.boutons');
 const btnReset = document.querySelector('#reset');
+const muteSound = document.querySelector('#muteSound');
 let isBombeDead = false;
 
 //changmement style div avec animation Pixel
@@ -252,6 +253,17 @@ function personaliserDivPersoPixel(animationPixelSource, animationPixelFrame, co
     const child = conteneur.children;
     child[num].style.backgroundImage = animationPixelSource;
     child[num].style.animationTimingFunction = animationPixelFrame;
+}
+
+function stopSound() {
+    const son = document.querySelectorAll('audio');
+    son.forEach((el) => {
+        if (el.muted == false) {
+            el.muted = true;
+        } else {
+            el.muted = false;
+        }
+    });
 }
 
 //ajout sons ambiance constant
