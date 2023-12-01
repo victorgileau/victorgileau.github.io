@@ -422,10 +422,6 @@ function goToChapter(chapterName) {
             cadreJeu.appendChild(audio);
             audio.classList.add('audio');
             audio.src = chapter.audio;
-            //mute
-            if (isSonMute === true) {
-                audio.volume = 0;
-            }
             audio.volume = 0.15;
             if (audio.src === './assets/sons/gta_restart.mp3') {
                 audio.volume = 1;
@@ -560,12 +556,34 @@ function goToChapter(chapterName) {
 }
 
 muteSound.addEventListener('change', () => {
+    let audio = document.querySelector('.audio');
+    let audioAmbiant = document.querySelector('.audioAmbiant');
     if (isSonMute == false) {
         isSonMute = true;
+        audioAmbiantGeneral.volume = 0;
+        if (audio != undefined) {
+            audio.volume = 0;
+        }
+        if (audioAmbiant != undefined) {
+            audioAmbiant.volume = 0;
+        }
     } else {
         isSonMute = false
+        audioAmbiantGeneral.volume = 0.4;
+        if (audio != undefined) {
+            audio.volume = 0.15;
+        }
+        if (audioAmbiant != undefined) {
+            audioAmbiant.volume = 0.3;
+        }
     }
 });
+
+
+
+if (isSonMute === true) {
+    
+}
 
 if (localStorage.getItem('chapter') != null) {
     let mortBombe = localStorage.getItem('mortBombe');
