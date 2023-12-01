@@ -247,6 +247,7 @@ const containButton = document.querySelector('.boutons');
 const btnReset = document.querySelector('#reset');
 const muteSound = document.querySelector('#muteSound');
 let isBombeDead = false;
+let isSonMute = false;
 
 //changmement style div avec animation Pixel
 function personaliserDivPersoPixel(animationPixelSource, animationPixelFrame, conteneur, num) {
@@ -255,16 +256,11 @@ function personaliserDivPersoPixel(animationPixelSource, animationPixelFrame, co
     child[num].style.animationTimingFunction = animationPixelFrame;
 }
 
-function stopSound() {
-    const son = document.querySelectorAll('audio');
-    son.forEach((el) => {
-        if (el.muted == false) {
-            el.muted = true;
-        } else {
-            el.muted = false;
-        }
-    });
+
+function stopSound(audio) {
+    audio.volume = 0;
 }
+
 
 //ajout sons ambiance constant
 const audioAmbiantGeneral = document.createElement('audio');
@@ -416,8 +412,9 @@ function goToChapter(chapterName) {
         //ajout de son
         const audio = document.createElement('audio');
 
-        if (chapter.audio != undefined) {
+        if (chapter.audio != undefined && isSonMute == false) {
             let sonAvant = document.querySelector('.audio');
+            
             if (sonAvant != undefined) {
                 cadreJeu.removeChild(sonAvant);
             }
@@ -425,11 +422,16 @@ function goToChapter(chapterName) {
             cadreJeu.appendChild(audio);
             audio.classList.add('audio');
             audio.src = chapter.audio;
+            //mute
+            if (isSonMute === true) {
+                audio.volume = 0;
+            }
             audio.volume = 0.15;
             if (audio.src === './assets/sons/gta_restart.mp3') {
                 audio.volume = 1;
             }
             audio.play();
+
             setTimeout(() => {
                 audio.pause();
             }, 3000);
@@ -445,7 +447,7 @@ function goToChapter(chapterName) {
         //ajout son ambiant
         const audioAmbiant = document.createElement('audio');
 
-        if (chapter.audioAmbiant != undefined) {
+        if (chapter.audioAmbiant != undefined && isSonMute == false) {
             let sonAvant = document.querySelector('.audioAmbiant');
             if (sonAvant != undefined) {
                 cadreJeu.removeChild(sonAvant);
@@ -473,6 +475,11 @@ function goToChapter(chapterName) {
         if ([chapterName] == 'choixNiveauUn' || [chapterName] == 'choixDepart') {
             audioAmbiantGeneral.pause();
         } else {
+            if (isSonMute == true) {
+                audioAmbiantGeneral.volume = 0;
+            } else {
+                audioAmbiantGeneral.volume = 0.4;
+            }
             audioAmbiantGeneral.play();
         }
         
@@ -551,6 +558,14 @@ function goToChapter(chapterName) {
         console.log('Mauvaise clé.');
     }
 }
+
+muteSound.addEventListener('change', () => {
+    if (isSonMute == false) {
+        isSonMute = true;
+    } else {
+        isSonMute = false
+    }
+});
 
 if (localStorage.getItem('chapter') != null) {
     let mortBombe = localStorage.getItem('mortBombe');
