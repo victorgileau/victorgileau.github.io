@@ -23,7 +23,7 @@ const chapters = {
 
     choixDepart: {
         titre: 'Le debut de la fin',
-        description: '\nVous devez décider si vous accepter la mission ou choisir une autre option?',
+        description: '\nVous devez décider si vous acceptez la mission ou choisir une autre option?',
         image: './assets/images/commandant_militaire_homme-modifier.jpg',
         video: './assets/videos/WW2_Eastern_Front_Battle_Footage-480p.mp4',
         audio: './assets/sons/transition.mp3',
@@ -37,7 +37,7 @@ const chapters = {
 
     fuirChoixDepart: {
         titre: 'Tuer',
-        description: '\nVous êtes tuer par l\'ennemi. Pour avoir pris une décision aussi stupide.',
+        description: '\nVous êtes tué par l\'ennemi. Pour avoir pris une décision aussi stupide.',
         image: './assets/images/homme_militaire_tire-modifer.jpg',
         audio: './assets/sons/rifle-shot-m1-garand.mp3',
         bouton: [
@@ -67,7 +67,7 @@ const chapters = {
 
     choixNiveauUn: {
         titre: 'Le champ de bataille',
-        description: '\nPlusieurs options s\'offre a vous pour traverser ce champ de bataille des plus dévastateurs, vous devez choisir un moyen de passer et vite.',
+        description: '\nPlusieurs options s\'offrent à vous pour traverser ce champ de bataille des plus dévastateurs, vous devez choisir un moyen de passer et vite.',
         image: './assets/images/homme_militaire_glise-desert-modifer.jpg',
         video: './assets/videos/WW2_Eastern_Front_Battle_Footage-480p.mp4',
         audio: './assets/sons/transition.mp3',
@@ -81,7 +81,7 @@ const chapters = {
 
     foncerChoixNiveauUn: {
         titre: 'Foncer',
-        description: '\nVous êtes tuer par l\'ennemi, conseille d\'ami ne pas foncer tout droit dans un champ de bataille.',
+        description: '\nVous êtes tué par l\'ennemi, conseil d\'ami ne pas foncer tout droit dans un champ de bataille.',
         image: './assets/images/homme_militaire_tire-modifer.jpg',
         audio: './assets/sons/rifle-shot-m1-garand.mp3',
         bouton: [
@@ -122,7 +122,7 @@ const chapters = {
 
     choixNiveauTroix: {
         titre: 'Catastrophe',
-        description: '\nVous devez traverser vers un point plus près de l\'objectif. Mais les choses devienne difficile rapidement et vous devez sacrifier un de vos coéquipiers pour traverser les tirs ennemis. Lequel choisirez-vous?',
+        description: '\nVous devez traverser vers un point plus près de l\'objectif. Mais les choses deviennent difficile rapidement et vous devez sacrifier un de vos coéquipiers pour traverser les tirs ennemis. Lequel choisirez-vous?',
         image: './assets/images/homme_militaire_marche_foret.jpg',
         audio: './assets/sons/transition.mp3',
         bouton: [
@@ -134,7 +134,7 @@ const chapters = {
 
     bombeChoixNiveauTroix: {
         titre: 'Sacrifier Bombe',
-        description: '\nBombe qui comprend vos ordres à travers les tirs ennemis et courre sur le champ de bataille et puis... \n Bombe pose le pied sur une mine et dit \"merde\". Il meurt.',
+        description: '\nBombe qui comprend vos ordres à travers les tirs ennemis et court sur le champ de bataille et puis... \n Bombe pose le pied sur une mine et dit \"merde\". Il meurt.',
         image: './assets/images/militaire_vissage_cacher_regard-de_cote-modifer.jpg',
         audio: './assets/sons/small-explosion.mp3',
         bouton: [
@@ -144,7 +144,7 @@ const chapters = {
 
     nickChoixNiveauTroix: {
         titre: 'Sacrifier Nick',
-        description: '\nVous proposer à vos coéquipiers en criant : On pourrait sacrifier Nick!!! \nMais la réaction est très négative de la part de votre équipe vous êtes tué pour vouloir tuer le farceur Nick.',
+        description: '\nVous proposez à vos coéquipiers en criant : On pourrait sacrifier Nick!!! \nMais la réaction est très négative de la part de votre équipe vous êtes tué pour vouloir tuer le farceur Nick.',
         image: './assets/images/deux_militaire-modifier.jpg',
         audio: './assets/sons/walther-p38-firing-sound-effect.mp3',
         bouton: [
@@ -154,7 +154,7 @@ const chapters = {
 
     aliveChoixNiveauTroix: {
         titre: 'Sacrifier Alive',
-        description: '\nVous proposer à vos coéquipiers en criant : On pourrait sacrifier Alive!!! \nMais la réaction est très positive de la part de votre équipe vous aide à convaincre Alive de se sacrifier il le fait sentant le support de tous c\'est confrère soldat. La vérité c\'est qu\'il ne l\'aimais pas beaucoup.\n \n Vous vous rendez à l\'objectif avec la perte du soldat Alive qui n\'est pas une très grande perte.',
+        description: '\nVous proposez à vos coéquipiers en criant : On pourrait sacrifier Alive!!! \nLa réaction est très positive de la part de votre équipe et vous aide à convaincre Alive de se sacrifier. Il le fait sentant le support de tous ses confrères soldats. La vérité c\'est qu\'il ne l\'aimait pas beaucoup.\n \n Vous vous rendez à l\'objectif avec la perte du soldat Alive qui n\'est pas une très grande perte.',
         image: './assets/images/homme_militaire_glise-desert-modifer.jpg',
         audio: './assets/sons/transition.mp3',
         bouton: [
@@ -175,8 +175,8 @@ const chapters = {
     },
 
     vousChoixNiveauQuatre: {
-        titre: 'Uh sacrifice pour le escadron',
-        description: '\nVous voyez tout la difficulté de la situation dans laquelle votre escadron se trouve. Il manque de munition et le moral est bas.\nVous foncer vers l\'ennemi pour déstabiliser l\'ennemi et rallumer la flame de vos confrères. \n\n\nMais malheureusement vous mourrez d\'un tir à la tête en un instant.',
+        titre: 'Un sacrifice pour l\'escadron',
+        description: '\nVous voyez toute la difficulté de la situation dans laquelle votre escadron se trouve. Il manque de munition et le moral est bas.\nVous foncez vers l\'ennemi pour déstabiliser l\'ennemi et rallumez la flame de vos confrères. \n\n\nMais malheureusement vous mourez d\'un tir à la tête en un instant.',
         image: './assets/images/homme_masque_ordre-modifier.jpg',
         audio: './assets/sons/rifle-shot-m1-garand.mp3',
         bouton: [
@@ -186,7 +186,7 @@ const chapters = {
 
     nickChoixNiveauQuatre: {
         titre: 'Uh échec pour la gloire',
-        description: '\nNick crie qui va les sauver : Je vais tout vous sauver!!! \nNick enlève la goupille d\'une grenade, mais une blessure à son bras fait en sorte qu\'il l\'échappe, ce qui tue tout votre escadron. \nIl ne vous à pas sauvé du tout.',
+        description: '\nNick crie qui va les sauver : Je vais tous vous sauver!!! \nNick enlève la goupille d\'une grenade, mais une blessure à son bras fait en sorte qu\'il l\'échappe, ce qui tue tout votre escadron. \nIl ne vous à pas sauvé du tout.',
         image: './assets/images/explosion_carre-modifier.jpg',
         audio: './assets/sons/explosion.mp3',
         video: './assets/videos/Big_Explosion.mp4',
@@ -220,7 +220,7 @@ const chapters = {
 //ajout new
 const animationPixel = {
     perso1: {
-        nom: 'Jonny',
+        nom: 'Johny',
         frame: 3,
         source: './assets/animation_pixel/Perso1_01_idle/character_1_sckull_idle-spritsheet.png'
     },
