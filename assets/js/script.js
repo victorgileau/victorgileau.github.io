@@ -290,7 +290,7 @@ function goToChapter(chapterName) {
             const infoSoldat = document.createElement('p');
             infoSoldat.setAttribute('class', 'soldat');
             cadreJeu.appendChild(infoSoldat);
-            infoSoldat.innerHTML = `Soldat choisie pour menner la mission:<br><em>${soldat}</em>`;
+            infoSoldat.innerHTML = `Soldat choisi pour mener la mission:<br><em>${soldat}</em>`;
         }
         //Fin Ajout *NEW*
         
@@ -477,7 +477,7 @@ function goToChapter(chapterName) {
         if ([chapterName] == 'choixNiveauUn' || [chapterName] == 'choixDepart') {
             audioAmbiantGeneral.pause();
         } else {
-            if (isSonMute == true) {
+            if (isSonMute === true) {
                 audioAmbiantGeneral.volume = 0;
             } else {
                 audioAmbiantGeneral.volume = 0.4;
