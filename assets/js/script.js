@@ -555,7 +555,10 @@ function goToChapter(chapterName) {
     }
 }
 
+const labelMute = document.querySelector('.muteSound');
+
 muteSound.addEventListener('change', () => {
+    labelMute.classList.toggle('stop');
     let audio = document.querySelector('.audio');
     let audioAmbiant = document.querySelector('.audioAmbiant');
     if (isSonMute == false) {

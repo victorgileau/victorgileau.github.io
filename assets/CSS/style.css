@@ -69,10 +69,31 @@ body {
     border: solid 1px #e0baba;
 }
 
+#muteSound {
+    display: none;
+}
+
 .muteSound {
     align-self: flex-end;
-    padding: 5px;
     order: 4;
+    display: flex;
+    align-items: center;
+}
+
+.muteSound::after {
+    content: '';
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    background-image: url('../images/batiment_detruit-modifier.jpg');
+    background-size: 2em;
+}
+
+.muteSound.stop::after {
+    content: '';
+    display: inline-block;
+    background-image: url('../images/groupe_militaire_arme-modifier.jpg');
+    background-size: 2em;
 }
 
 p {
