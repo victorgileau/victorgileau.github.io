@@ -420,6 +420,10 @@ button:active {
         font-size: 18px;
     }
 
+    .muteSound {
+        align-self: center;
+    }
+
     .muteSound::after {
         width: 2em;
         height: 2em;
