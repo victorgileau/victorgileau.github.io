@@ -74,26 +74,32 @@ body {
 }
 
 .muteSound {
+    width: 6.5em;
     align-self: flex-end;
+    font-family: "Delivery";
+    text-transform: uppercase;
+    font-style: italic;
     order: 4;
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 .muteSound::after {
     content: '';
     display: inline-block;
-    width: 2em;
-    height: 2em;
-    background-image: url('../images/batiment_detruit-modifier.jpg');
-    background-size: 2em;
+    width: 3em;
+    height: 3em;
+    background-image: url('../images/anim_sound.gif');
+    background-size: 3em;
+    filter: contrast(50%);
 }
 
 .muteSound.stop::after {
     content: '';
     display: inline-block;
-    background-image: url('../images/groupe_militaire_arme-modifier.jpg');
-    background-size: 2em;
+    background-image: url('../images/anim_sound-stop.png');
+    background-size: 3em;
 }
 
 p {
@@ -412,6 +418,18 @@ button:active {
     }
     #reset:active {
         font-size: 18px;
+    }
+
+    .muteSound::after {
+        width: 2em;
+        height: 2em;
+        background-size: 2em;
+    }
+
+    .muteSound.stop::after {
+        width: 2em;
+        height: 2em;
+        background-size: 2em;
     }
     /*Ajout NEW*/
     .gameChoix {

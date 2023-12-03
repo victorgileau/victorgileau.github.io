@@ -412,7 +412,7 @@ function goToChapter(chapterName) {
         //ajout de son
         const audio = document.createElement('audio');
 
-        if (chapter.audio != undefined && isSonMute == false) {
+        if (chapter.audio != undefined) {
             let sonAvant = document.querySelector('.audio');
             
             if (sonAvant != undefined) {
@@ -423,6 +423,9 @@ function goToChapter(chapterName) {
             audio.classList.add('audio');
             audio.src = chapter.audio;
             audio.volume = 0.15;
+            if (isSonMute === true) {
+                audio.volume = 0;
+            }
             if (audio.src === './assets/sons/gta_restart.mp3') {
                 audio.volume = 1;
             }
@@ -443,7 +446,7 @@ function goToChapter(chapterName) {
         //ajout son ambiant
         const audioAmbiant = document.createElement('audio');
 
-        if (chapter.audioAmbiant != undefined && isSonMute == false) {
+        if (chapter.audioAmbiant != undefined) {
             let sonAvant = document.querySelector('.audioAmbiant');
             if (sonAvant != undefined) {
                 cadreJeu.removeChild(sonAvant);
@@ -453,6 +456,9 @@ function goToChapter(chapterName) {
             audioAmbiant.classList.add('audioAmbiant');
             audioAmbiant.src = chapter.audioAmbiant;
             audioAmbiant.volume = 0.3;
+            if (isSonMute === true) {
+                audioAmbiant.volume = 0;
+            }
             audioAmbiant.loop = true;
             audioAmbiant.play();
             if ([chapterName] == 'vehiculeChoixNiveauUn') {
@@ -478,7 +484,6 @@ function goToChapter(chapterName) {
             }
             audioAmbiantGeneral.play();
         }
-        
 
         //écrit information sur le chapitre dans la console
         console.log(`${chapter.titre} \n ${chapter.description}`);
@@ -559,28 +564,39 @@ const labelMute = document.querySelector('.muteSound');
 
 muteSound.addEventListener('change', () => {
     labelMute.classList.toggle('stop');
-    let audio = document.querySelector('.audio');
-    let audioAmbiant = document.querySelector('.audioAmbiant');
-    if (isSonMute == false) {
+    const audioMute = document.querySelector('.audio');
+    const audioAmbiantMute = document.querySelector('.audioAmbiant');
+    if (muteSound.checked) {
+        audioStopPlay(audioMute, audioAmbiantMute, audioAmbiantGeneral);
         isSonMute = true;
-        audioAmbiantGeneral.volume = 0;
-        if (audio != undefined) {
-            audio.volume = 0;
+        localStorage.setItem('isSonMute', 'true');
+    } else {
+        audioStopPlay(audioMute, audioAmbiantMute, audioAmbiantGeneral);
+        isSonMute = false;
+        localStorage.setItem('isSonMute', 'false');
+    }
+   
+});
+
+function audioStopPlay(audioBase, audioAmbiance, audioGeneral) {
+    if (isSonMute == false) {
+        audioGeneral.volume = 0;
+        if (audioBase != undefined) {
+            audioBase.volume = 0;
         }
-        if (audioAmbiant != undefined) {
-            audioAmbiant.volume = 0;
+        if (audioAmbiance != undefined) {
+            audioAmbiance.volume = 0;
         }
     } else {
-        isSonMute = false
-        audioAmbiantGeneral.volume = 0.4;
-        if (audio != undefined) {
-            audio.volume = 0.15;
+        audioGeneral.volume = 0.4;
+        if (audioBase != undefined) {
+            audioBase.volume = 0.15;
         }
-        if (audioAmbiant != undefined) {
-            audioAmbiant.volume = 0.3;
+        if (audioAmbiance != undefined) {
+            audioAmbiance.volume = 0.3;
         }
     }
-});
+}
 
 if (localStorage.getItem('chapter') != null) {
     let mortBombe = localStorage.getItem('mortBombe');
@@ -589,6 +605,15 @@ if (localStorage.getItem('chapter') != null) {
         isBombeDead = true;
     } else {
         isBombeDead = false;
+    }
+    let sonMute = localStorage.getItem('isSonMute');
+    if (sonMute === 'true') {
+        muteSound.checked = true;
+        labelMute.classList.add('stop');
+        isSonMute = true;
+    }
+    else {
+        isSonMute = false;
     }
     goToChapter(localStorage.getItem('chapter'));
 } else {
