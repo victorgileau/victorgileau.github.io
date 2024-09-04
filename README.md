@@ -24,9 +24,14 @@ Ville de Montréal
 
 ## Creation
 * 2020
-* Première : 2020
+* Première : 2 octobre 2020
 * Présenter le 26 août 2024
 
 ## Présentation
 * Lieu : Le Parterre, Quartier des spectacles
 Extérieur
+* Fait pour tout personne qui la voie
+* Autre lieu : square Sir-George-Étienne-Cartier arrondissment Le Sud-Ouest
+
+## Description
+
