@@ -1,16 +1,27 @@
-# Inflorescences
+# Duo
 
-## Autrices
-Sabrina Ratté
+## Compagnie
+mirari
 
 ## Équipe
-* Multimedia integration: Guillaume Arseneault
-* Son: Roger Tellier Craig
+* Direction de création : Thomas Payette (mirari)
+* Chorégraphie : Virginie Brunelle (Compagnie Virginie Brunelle)
+* Danse : Sophie Breton et Milan Panet-Gigon
+* Scénographie : Xavier Mary (mirari)
+* Conception et réalisation multimédia : Antonin Gougeon Moisan (mirari)
+* Direction technique : Jean-François Piché
+* Contenu et réalisation des images : mirari
+* Musique : Dear Criminals
+* Construction : Gauvin Fabrique
 
-## Sponsors
-Compagnie MOMENT FACTORY
+## Collaboration
+Virginie Brunelle
+
+## Financement
+Ville de Montréal
 
 ## Creation
-* 2023
-* Première présentation 2024
-* Présenter le 
+* 
+
+## Présentation
+* 
