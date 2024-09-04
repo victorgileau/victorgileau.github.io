@@ -1,6 +1,6 @@
 # Duo
 
-![Photo de l'instalation](images/cap-1.PNG)
+![Photo de l'instalation](medias/images/cap-1.PNG)
 
 ## Compagnie
 mirari
@@ -23,7 +23,10 @@ Virginie Brunelle
 Ville de Montréal
 
 ## Creation
-* 2021
+* 2020
+* Première : 2020
+* Présenter le 26 août 2024
 
 ## Présentation
-* 
+* Lieu : Le Parterre, Quartier des spectacles
+Extérieur
