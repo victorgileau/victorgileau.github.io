@@ -1,2 +1,16 @@
-# docsify-modele-classique
-modèle de page docsify pour une publication via page sans actions 
+# Inflorescences
+
+## Autrices
+Sabrina Ratté
+
+## Équipe
+Multimedia integration: Guillaume Arseneault
+Son: Roger Tellier Craig
+
+## Sponsors
+Compagnie MOMENT FACTORY
+
+## Creation
+* 2023
+* Première présentation 2024
+* Présenter le 
