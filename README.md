@@ -3,7 +3,7 @@
 ![Photo de l'instalation](medias/images/cap-1.PNG)
 
 ## Compagnie
-mirari
+### mirari
 
 ## Équipe
 * Direction de création : Thomas Payette (mirari)
@@ -37,3 +37,11 @@ Extérieur
 
 ![image de l'installation](medias/images/mirari_DUO_credit_Julia_Marois_01.webp)
 ![image de L'installation 2](medias/images/DUOO_Julia-Marois05-scaled.jpg)
+
+<br>
+
+Objectif de l'oeuvre (public cible) + aspect technique + processus de création
+
+<br>
+
+## Comment
