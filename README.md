@@ -4,8 +4,8 @@
 Sabrina Ratté
 
 ## Équipe
-Multimedia integration: Guillaume Arseneault
-Son: Roger Tellier Craig
+* Multimedia integration: Guillaume Arseneault
+* Son: Roger Tellier Craig
 
 ## Sponsors
 Compagnie MOMENT FACTORY
