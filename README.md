@@ -1,5 +1,7 @@
 # Duo
 
+![Photo de l'instalation](images/cap-1.PNG)
+
 ## Compagnie
 mirari
 
