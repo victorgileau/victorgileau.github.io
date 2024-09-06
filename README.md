@@ -47,6 +47,8 @@ Extérieur
 
 Toute personne qui ce presente entre les deux denseurs.
 
+![image du publique](medias/images/auditoire_duo.png)
+
 ## Aspects Techniques
 
 * Vidéo - son (haut-parleur) - mirroire
