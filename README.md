@@ -38,8 +38,6 @@ Extérieur
 ![image de l'installation](medias/images/mirari_DUO_credit_Julia_Marois_01.webp)
 ![image de L'installation 2](medias/images/DUOO_Julia-Marois05-scaled.jpg)
 
-<br>
-
 ## Objectifs de l'oeuvre
 
 * Permettre des duo en publique
