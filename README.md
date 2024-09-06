@@ -3,7 +3,7 @@
 ![Photo de l'instalation](medias/images/cap-1.PNG)
 
 ## Compagnie
-### mirari
+**mirari**
 
 ## Équipe
 * Direction de création : Thomas Payette (mirari)
@@ -40,8 +40,26 @@ Extérieur
 
 <br>
 
-Objectif de l'oeuvre (public cible) + aspect technique + processus de création
+## Objectifs de l'oeuvre
 
-<br>
+* Permettre des duo en publique
+* Faire participer l'auditioir
 
-## Comment
+## Publique
+
+Toute personne qui ce presente entre les deux denseurs.
+
+## Aspects Techniques
+
+* Vidéo - son (haut-parleur) - mirroire
+
+## Processus de création 
+
+* Corrégraphie créé par danseur
+
+## Composante centrale 
+
+* 2 écrans led avec 2 miroirs sans tain - fonctionnement - impact
+
+## Apréciation
+
