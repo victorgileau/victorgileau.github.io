@@ -1,4 +1,4 @@
-# Duo
+# DUO
 
 ![Photo de l'instalation](medias/images/cap-1.PNG)
 
