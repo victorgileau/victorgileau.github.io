@@ -71,3 +71,5 @@ Toute personne qui ce presente entre les deux denseurs.
 
 ## Apréciation
 
+* interactivité
+* union
