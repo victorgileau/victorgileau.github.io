@@ -5,6 +5,10 @@
 ## Compagnie
 **mirari**
 
+* Installation transforme perception du public
+* Art vecteur de changement
+* Rencontre unique avec les spectateur(rice)s
+
 ## Équipe
 * Direction de création : Thomas Payette (mirari)
 * Chorégraphie : Virginie Brunelle (Compagnie Virginie Brunelle)
@@ -13,11 +17,12 @@
 * Conception et réalisation multimédia : Antonin Gougeon Moisan (mirari)
 * Direction technique : Jean-François Piché
 * Contenu et réalisation des images : mirari
-* Musique : Dear Criminals
 * Construction : Gauvin Fabrique
 
 ## Collaboration
 Virginie Brunelle
+
+* créé la chorégraphie
 
 ## Financement
 Ville de Montréal
@@ -34,6 +39,8 @@ Extérieur
 * Autre lieu : square Sir-George-Étienne-Cartier arrondissment Le Sud-Ouest
 
 ## Description
+
+* Installation interactive
 
 ![image de l'installation](medias/images/mirari_DUO_credit_Julia_Marois_01.webp)
 ![image de L'installation 2](medias/images/DUOO_Julia-Marois05-scaled.jpg)
@@ -60,6 +67,7 @@ Toute personne qui ce presente entre les deux denseurs.
 ## Composante centrale 
 
 * 2 écrans led avec 2 miroirs sans tain - fonctionnement - impact
+* Musique : Dear Criminals
 
 ## Apréciation
 
